@@ -2473,7 +2473,7 @@ Map<String, dynamic> _$ProfitRowsToJson(ProfitRows instance) {
 }
 
 ProfitRow _$ProfitRowFromJson(Map<String, dynamic> json) => ProfitRow(
-      rows: (json['Rows'] as List<dynamic>?)
+      rows: (json['Rows']?['Row'] as List<dynamic>?)
           ?.map((e) => ProfitRow.fromJson(e as Map<String, dynamic>))
           .toList(),
       header: json['Header'] == null
