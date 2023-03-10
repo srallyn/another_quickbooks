@@ -48,18 +48,18 @@ class QuickbooksClient {
 
   QuickbooksClient(
       {required this.applicationId,
-      required this.clientId,
-      required this.clientSecret,
-      this.environmentType = EnvironmentType.Sandbox}) {
+        required this.clientId,
+        required this.clientSecret,
+        this.environmentType = EnvironmentType.Sandbox}) {
     if (environmentType == EnvironmentType.Sandbox) {
       _url = "sandbox-quickbooks.api.intuit.com";
       _discoveryUrl =
-          "https://developer.api.intuit.com/.well-known/openid_sandbox_configuration";
+      "https://developer.api.intuit.com/.well-known/openid_sandbox_configuration";
       _paymentsUrl = "sandbox.api.intuit.com";
     } else {
       _url = "quickbooks.api.intuit.com";
       _discoveryUrl =
-          "https://developer.api.intuit.com/.well-known/openid_configuration";
+      "https://developer.api.intuit.com/.well-known/openid_configuration";
       _paymentsUrl = "api.intuit.com";
     }
     _discoveryService = DiscoveryService(discoveryUrl: _discoveryUrl);
@@ -90,8 +90,8 @@ class QuickbooksClient {
   ///
   String getAuthorizationPageUrl(
       {required List<Scope> scopes,
-      required String redirectUrl,
-      required String state}) {
+        required String redirectUrl,
+        required String state}) {
     if (_authenticationService == null) {
       throw ClientNotInitializedException(message: "Auth Not Ready");
     } else {
@@ -105,8 +105,8 @@ class QuickbooksClient {
   ///
   Future<TokenResponse> getAuthToken(
       {required String code,
-      required String redirectUrl,
-      required String realmId}) async {
+        required String redirectUrl,
+        required String realmId}) async {
     if (_authenticationService == null) {
       throw ClientNotInitializedException(message: "Auth Not Ready");
     } else {
@@ -656,8 +656,8 @@ class AccountingClient {
 
   AccountingClient._(
       {required this.baseUrl,
-      required this.authenticationService,
-      this.minorVersion = 63}) {
+        required this.authenticationService,
+        this.minorVersion = 63}) {
     _accountsService = AccountService(
         baseUrl: baseUrl,
         authenticationService: authenticationService,

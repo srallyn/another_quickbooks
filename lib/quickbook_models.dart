@@ -85,26 +85,26 @@ class Account {
 
   Account(
       {this.id,
-      this.name,
-      this.accountAlias,
-      this.accountSubType,
-      this.accountType,
-      this.acctNum,
-      this.active,
-      this.classification,
-      this.createTime,
-      this.currencyRef,
-      this.currentBalance,
-      this.currentBalanceWithSubAccounts,
-      this.description,
-      this.fullyQualifiedName,
-      this.lastUpdatedTime,
-      this.metaData,
-      this.parentRef,
-      this.subAccount,
-      this.syncToken,
-      this.taxCodeRef,
-      this.txnLocationType});
+        this.name,
+        this.accountAlias,
+        this.accountSubType,
+        this.accountType,
+        this.acctNum,
+        this.active,
+        this.classification,
+        this.createTime,
+        this.currencyRef,
+        this.currentBalance,
+        this.currentBalanceWithSubAccounts,
+        this.description,
+        this.fullyQualifiedName,
+        this.lastUpdatedTime,
+        this.metaData,
+        this.parentRef,
+        this.subAccount,
+        this.syncToken,
+        this.taxCodeRef,
+        this.txnLocationType});
 
   factory Account.fromJson(Map<String, dynamic> json) =>
       _$AccountFromJson(json);
@@ -267,28 +267,28 @@ class Bill {
 
   Bill(
       {this.txnDate,
-      this.linkedTxn,
-      this.aPAccountRef,
-      this.currencyRef,
-      this.syncToken,
-      this.id,
-      this.metaData,
-      this.balance,
-      this.departmentRef,
-      this.docNumber,
-      this.dueDate,
-      this.exchangeRate,
-      this.globalTaxCalculation,
-      this.homeBalance,
-      this.includeInAnnualTPAR,
-      this.line,
-      this.privateNote,
-      this.recurDataRef,
-      this.salesTermRef,
-      this.totalAmt,
-      this.transactionLocationType,
-      this.txnTaxDetail,
-      this.vendorRef});
+        this.linkedTxn,
+        this.aPAccountRef,
+        this.currencyRef,
+        this.syncToken,
+        this.id,
+        this.metaData,
+        this.balance,
+        this.departmentRef,
+        this.docNumber,
+        this.dueDate,
+        this.exchangeRate,
+        this.globalTaxCalculation,
+        this.homeBalance,
+        this.includeInAnnualTPAR,
+        this.line,
+        this.privateNote,
+        this.recurDataRef,
+        this.salesTermRef,
+        this.totalAmt,
+        this.transactionLocationType,
+        this.txnTaxDetail,
+        this.vendorRef});
 
   factory Bill.fromJson(Map<String, dynamic> json) => _$BillFromJson(json);
 
@@ -387,11 +387,11 @@ class ItemBasedExpenseLine implements Line {
 
   ItemBasedExpenseLine(
       {this.description,
-      this.amount,
-      this.detailType,
-      this.id,
-      this.itemBasedExpenseLineDetail,
-      this.lineNum});
+        this.amount,
+        this.detailType,
+        this.id,
+        this.itemBasedExpenseLineDetail,
+        this.lineNum});
 
   factory ItemBasedExpenseLine.fromJson(Map<String, dynamic> json) =>
       _$ItemBasedExpenseLineFromJson(json);
@@ -434,15 +434,15 @@ class ItemBasedExpenseLineDetail {
 
   ItemBasedExpenseLineDetail(
       {this.taxCodeRef,
-      this.billableStatus,
-      this.classRef,
-      this.customerRef,
-      this.itemRef,
-      this.markupInfo,
-      this.priceLevelRef,
-      this.qty,
-      this.taxInclusiveAmt,
-      this.unitPrice});
+        this.billableStatus,
+        this.classRef,
+        this.customerRef,
+        this.itemRef,
+        this.markupInfo,
+        this.priceLevelRef,
+        this.qty,
+        this.taxInclusiveAmt,
+        this.unitPrice});
 
   factory ItemBasedExpenseLineDetail.fromJson(Map<String, dynamic> json) =>
       _$ItemBasedExpenseLineDetailFromJson(json);
@@ -475,11 +475,11 @@ class AccountBasedExpenseLine implements Line {
 
   AccountBasedExpenseLine(
       {this.id,
-      required this.detailType,
-      this.amount,
-      this.description,
-      this.accountBasedExpenseLineDetail,
-      this.decimal});
+        required this.detailType,
+        this.amount,
+        this.description,
+        this.accountBasedExpenseLineDetail,
+        this.decimal});
 
   factory AccountBasedExpenseLine.fromJson(Map<String, dynamic> json) =>
       _$AccountBasedExpenseLineFromJson(json);
@@ -509,11 +509,11 @@ class SalesItemLine implements Line {
 
   SalesItemLine(
       {this.id,
-      this.detailType,
-      this.amount,
-      this.description,
-      this.lineNum,
-      this.salesItemLineDetail});
+        this.detailType,
+        this.amount,
+        this.description,
+        this.lineNum,
+        this.salesItemLineDetail});
 
   factory SalesItemLine.fromJson(Map<String, dynamic> json) =>
       _$SalesItemLineFromJson(json);
@@ -561,17 +561,17 @@ class SalesItemLineDetail {
 
   SalesItemLineDetail(
       {this.classRef,
-      this.taxCodeRef,
-      this.markupInfo,
-      this.taxInclusiveAmt,
-      this.unitPrice,
-      this.qty,
-      this.itemRef,
-      this.discountAmt,
-      this.discountRate,
-      this.itemAccountRef,
-      this.serviceDate,
-      this.taxClassificationRef});
+        this.taxCodeRef,
+        this.markupInfo,
+        this.taxInclusiveAmt,
+        this.unitPrice,
+        this.qty,
+        this.itemRef,
+        this.discountAmt,
+        this.discountRate,
+        this.itemAccountRef,
+        this.serviceDate,
+        this.taxClassificationRef});
 
   factory SalesItemLineDetail.fromJson(Map<String, dynamic> json) =>
       _$SalesItemLineDetailFromJson(json);
@@ -598,10 +598,10 @@ class GroupLine implements Line {
 
   GroupLine(
       {this.lineNum,
-      this.description,
-      required this.detailType,
-      this.id,
-      this.groupLineDetail});
+        this.description,
+        required this.detailType,
+        this.id,
+        this.groupLineDetail});
 
   factory GroupLine.fromJson(Map<String, dynamic> json) =>
       _$GroupLineFromJson(json);
@@ -651,11 +651,11 @@ class DescriptionOnlyLine implements Line {
 
   DescriptionOnlyLine(
       {this.detailType,
-      this.description,
-      this.lineNum,
-      this.amount,
-      this.descriptionLineDetail,
-      this.id});
+        this.description,
+        this.lineNum,
+        this.amount,
+        this.descriptionLineDetail,
+        this.id});
 
   factory DescriptionOnlyLine.fromJson(Map<String, dynamic> json) =>
       _$DescriptionOnlyLineFromJson(json);
@@ -701,11 +701,11 @@ class DiscountLine implements Line {
 
   DiscountLine(
       {this.amount,
-      this.lineNum,
-      this.description,
-      this.id,
-      this.detailType,
-      this.discountLineDetail});
+        this.lineNum,
+        this.description,
+        this.id,
+        this.detailType,
+        this.discountLineDetail});
 
   factory DiscountLine.fromJson(Map<String, dynamic> json) =>
       _$DiscountLineFromJson(json);
@@ -732,10 +732,10 @@ class DiscountLineDetail {
 
   DiscountLineDetail(
       {this.taxCodeRef,
-      this.classRef,
-      this.percentBased,
-      this.discountAccountRef,
-      this.discountPercent});
+        this.classRef,
+        this.percentBased,
+        this.discountAccountRef,
+        this.discountPercent});
 
   factory DiscountLineDetail.fromJson(Map<String, dynamic> json) =>
       _$DiscountLineDetailFromJson(json);
@@ -821,13 +821,13 @@ class AccountBasedExpense {
 
   AccountBasedExpense(
       {this.taxInclusiveAmt,
-      this.markupInfo,
-      this.customerRef,
-      this.classRef,
-      this.billableStatus,
-      this.taxCodeRef,
-      required this.accountRef,
-      this.taxAmount});
+        this.markupInfo,
+        this.customerRef,
+        this.classRef,
+        this.billableStatus,
+        this.taxCodeRef,
+        required this.accountRef,
+        this.taxAmount});
 
   factory AccountBasedExpense.fromJson(Map<String, dynamic> json) =>
       _$AccountBasedExpenseFromJson(json);
@@ -932,11 +932,11 @@ class TaxLineDetail {
 
   TaxLineDetail(
       {this.netAmountTaxable,
-      this.overrideDeltaAmount,
-      this.percentBased,
-      this.taxInclusiveAmount,
-      this.taxPercent,
-      required this.taxRateRef});
+        this.overrideDeltaAmount,
+        this.percentBased,
+        this.taxInclusiveAmount,
+        this.taxPercent,
+        required this.taxRateRef});
 
   factory TaxLineDetail.fromJson(Map<String, dynamic> json) =>
       _$TaxLineDetailFromJson(json);
@@ -1003,21 +1003,21 @@ class CompanyInfo {
 
   CompanyInfo(
       {this.id,
-      this.syncToken,
-      this.companyAddr,
-      this.companyName,
-      this.companyStartDate,
-      this.country,
-      this.customerCommunicationAddr,
-      this.email,
-      this.fiscalYearStartMonth,
-      this.legalAddr,
-      this.legalName,
-      this.metaData,
-      this.pairs,
-      this.primaryPhone,
-      this.supportedLanguages,
-      this.webAddr});
+        this.syncToken,
+        this.companyAddr,
+        this.companyName,
+        this.companyStartDate,
+        this.country,
+        this.customerCommunicationAddr,
+        this.email,
+        this.fiscalYearStartMonth,
+        this.legalAddr,
+        this.legalName,
+        this.metaData,
+        this.pairs,
+        this.primaryPhone,
+        this.supportedLanguages,
+        this.webAddr});
 
   factory CompanyInfo.fromJson(Map<String, dynamic> json) =>
       _$CompanyInfoFromJson(json);
@@ -1070,17 +1070,17 @@ class PhysicalAddress {
 
   PhysicalAddress(
       {this.country,
-      this.id,
-      this.city,
-      this.countrySubDivisionCode,
-      this.lat,
-      this.line1,
-      this.line2,
-      this.line3,
-      this.line4,
-      this.line5,
-      this.long,
-      this.postalCode});
+        this.id,
+        this.city,
+        this.countrySubDivisionCode,
+        this.lat,
+        this.line1,
+        this.line2,
+        this.line3,
+        this.line4,
+        this.line5,
+        this.long,
+        this.postalCode});
 
   factory PhysicalAddress.fromJson(Map<String, dynamic> json) =>
       _$PhysicalAddressFromJson(json);
@@ -1316,51 +1316,51 @@ class Customer {
 
   Customer(
       {this.id,
-      this.webAddr,
-      this.primaryPhone,
-      this.companyName,
-      this.syncToken,
-      this.salesTermRef,
-      this.balance,
-      this.metaData,
-      this.currencyRef,
-      this.fullyQualifiedName,
-      this.parentRef,
-      this.active,
-      this.alternatePhone,
-      this.aRAccountRef,
-      this.balanceWithJobs,
-      this.billAddr,
-      this.billWithParent,
-      this.businessNumber,
-      this.customerTypeRef,
-      this.defaultTaxCodeRef,
-      this.displayName,
-      this.familyName,
-      this.fax,
-      this.givenName,
-      this.gSTIN,
-      this.gSTRegistrationType,
-      this.isProject,
-      this.job,
-      this.level,
-      this.middleName,
-      this.mobile,
-      this.notes,
-      this.openBalanceDate,
-      this.paymentMethodRef,
-      this.preferredDeliveryMethod,
-      this.primaryEmailAddr,
-      this.primaryTaxIdentifier,
-      this.printOnCheckName,
-      this.resaleNum,
-      this.secondaryTaxIdentifier,
-      this.shipAddr,
-      this.source,
-      this.suffix,
-      this.taxable,
-      this.taxExemptionReasonId,
-      this.title});
+        this.webAddr,
+        this.primaryPhone,
+        this.companyName,
+        this.syncToken,
+        this.salesTermRef,
+        this.balance,
+        this.metaData,
+        this.currencyRef,
+        this.fullyQualifiedName,
+        this.parentRef,
+        this.active,
+        this.alternatePhone,
+        this.aRAccountRef,
+        this.balanceWithJobs,
+        this.billAddr,
+        this.billWithParent,
+        this.businessNumber,
+        this.customerTypeRef,
+        this.defaultTaxCodeRef,
+        this.displayName,
+        this.familyName,
+        this.fax,
+        this.givenName,
+        this.gSTIN,
+        this.gSTRegistrationType,
+        this.isProject,
+        this.job,
+        this.level,
+        this.middleName,
+        this.mobile,
+        this.notes,
+        this.openBalanceDate,
+        this.paymentMethodRef,
+        this.preferredDeliveryMethod,
+        this.primaryEmailAddr,
+        this.primaryTaxIdentifier,
+        this.printOnCheckName,
+        this.resaleNum,
+        this.secondaryTaxIdentifier,
+        this.shipAddr,
+        this.source,
+        this.suffix,
+        this.taxable,
+        this.taxExemptionReasonId,
+        this.title});
 
   factory Customer.fromJson(Map<String, dynamic> json) =>
       _$CustomerFromJson(json);
@@ -1369,51 +1369,51 @@ class Customer {
 
   Customer copyWith(
       {String? id,
-      String? syncToken,
-      String? displayName,
-      String? title,
-      String? givenName,
-      String? middleName,
-      String? suffix,
-      String? familyName,
-      EmailAddress? primaryEmailAddr,
-      String? resaleNum,
-      String? secondaryTaxIdentifier,
-      ReferenceType? aRAccountRef,
-      ReferenceType? defaultTaxCodeRef,
-      String? preferredDeliveryMethod,
-      String? gSTIN,
-      ReferenceType? salesTermRef,
-      String? customerTypeRef,
-      TelephoneNumber? fax,
-      String? businessNumber,
-      bool? billWithParent,
-      CurrencyRefType? currencyRef,
-      TelephoneNumber? mobile,
-      bool? job,
-      double? balanceWithJobs,
-      TelephoneNumber? primaryPhone,
-      String? openBalanceDate,
-      bool? taxable,
-      TelephoneNumber? alternatePhone,
-      ModificationMetaData? metaData,
-      ReferenceType? parentRef,
-      String? notes,
-      WebSiteAddress? webAddr,
-      bool? active,
-      String? companyName,
-      double? balance,
-      PhysicalAddress? shipAddr,
-      ReferenceType? paymentMethodRef,
-      bool? isProject,
-      String? source,
-      String? primaryTaxIdentifier,
-      String? gSTRegistrationType,
-      String? printOnCheckName,
-      PhysicalAddress? billAddr,
-      String? fullyQualifiedName,
-      int? level,
-      int? taxExemptionReasonId}) {
+        String? syncToken,
+        String? displayName,
+        String? title,
+        String? givenName,
+        String? middleName,
+        String? suffix,
+        String? familyName,
+        EmailAddress? primaryEmailAddr,
+        String? resaleNum,
+        String? secondaryTaxIdentifier,
+        ReferenceType? aRAccountRef,
+        ReferenceType? defaultTaxCodeRef,
+        String? preferredDeliveryMethod,
+        String? gSTIN,
+        ReferenceType? salesTermRef,
+        String? customerTypeRef,
+        TelephoneNumber? fax,
+        String? businessNumber,
+        bool? billWithParent,
+        CurrencyRefType? currencyRef,
+        TelephoneNumber? mobile,
+        bool? job,
+        double? balanceWithJobs,
+        TelephoneNumber? primaryPhone,
+        String? openBalanceDate,
+        bool? taxable,
+        TelephoneNumber? alternatePhone,
+        ModificationMetaData? metaData,
+        ReferenceType? parentRef,
+        String? notes,
+        WebSiteAddress? webAddr,
+        bool? active,
+        String? companyName,
+        double? balance,
+        PhysicalAddress? shipAddr,
+        ReferenceType? paymentMethodRef,
+        bool? isProject,
+        String? source,
+        String? primaryTaxIdentifier,
+        String? gSTRegistrationType,
+        String? printOnCheckName,
+        PhysicalAddress? billAddr,
+        String? fullyQualifiedName,
+        int? level,
+        int? taxExemptionReasonId}) {
     return Customer(
         id: id ?? this.id,
         syncToken: syncToken ?? this.syncToken,
@@ -1426,11 +1426,11 @@ class Customer {
         primaryEmailAddr: primaryEmailAddr ?? this.primaryEmailAddr,
         resaleNum: resaleNum ?? this.resaleNum,
         secondaryTaxIdentifier:
-            secondaryTaxIdentifier ?? this.secondaryTaxIdentifier,
+        secondaryTaxIdentifier ?? this.secondaryTaxIdentifier,
         aRAccountRef: aRAccountRef ?? this.aRAccountRef,
         defaultTaxCodeRef: defaultTaxCodeRef ?? this.defaultTaxCodeRef,
         preferredDeliveryMethod:
-            preferredDeliveryMethod ?? this.preferredDeliveryMethod,
+        preferredDeliveryMethod ?? this.preferredDeliveryMethod,
         gSTIN: gSTIN ?? this.gSTIN,
         salesTermRef: salesTermRef ?? this.salesTermRef,
         customerTypeRef: customerTypeRef ?? this.customerTypeRef,
@@ -1463,7 +1463,7 @@ class Customer {
         fullyQualifiedName: fullyQualifiedName ?? this.fullyQualifiedName,
         level: level ?? this.level,
         taxExemptionReasonId:
-            taxExemptionReasonId ?? this.taxExemptionReasonId);
+        taxExemptionReasonId ?? this.taxExemptionReasonId);
   }
 
   @override
@@ -1559,31 +1559,31 @@ class Employee {
 
   Employee(
       {this.title,
-      this.suffix,
-      this.printOnCheckName,
-      this.primaryEmailAddr,
-      this.mobile,
-      this.middleName,
-      this.givenName,
-      this.familyName,
-      this.displayName,
-      this.active,
-      this.metaData,
-      this.syncToken,
-      this.primaryPhone,
-      this.id,
-      this.billableTime,
-      this.billRate,
-      this.birthDate,
-      this.costRate,
-      this.employeeNumber,
-      this.gender,
-      this.hiredDate,
-      this.organization,
-      this.primaryAddr,
-      this.releasedDate,
-      this.ssn,
-      this.v4IDPseudonym});
+        this.suffix,
+        this.printOnCheckName,
+        this.primaryEmailAddr,
+        this.mobile,
+        this.middleName,
+        this.givenName,
+        this.familyName,
+        this.displayName,
+        this.active,
+        this.metaData,
+        this.syncToken,
+        this.primaryPhone,
+        this.id,
+        this.billableTime,
+        this.billRate,
+        this.birthDate,
+        this.costRate,
+        this.employeeNumber,
+        this.gender,
+        this.hiredDate,
+        this.organization,
+        this.primaryAddr,
+        this.releasedDate,
+        this.ssn,
+        this.v4IDPseudonym});
 
   factory Employee.fromJson(Map<String, dynamic> json) =>
       _$EmployeeFromJson(json);
@@ -1719,43 +1719,43 @@ class Estimate {
 
   Estimate(
       {this.id,
-      this.syncToken,
-      this.metaData,
-      this.shipAddr,
-      this.billAddr,
-      this.currencyRef,
-      this.salesTermRef,
-      this.line,
-      this.classRef,
-      this.customerRef,
-      this.txnTaxDetail,
-      this.transactionLocationType,
-      this.totalAmt,
-      this.privateNote,
-      this.globalTaxCalculation,
-      this.exchangeRate,
-      this.dueDate,
-      this.docNumber,
-      this.departmentRef,
-      this.linkedTxn,
-      this.txnDate,
-      this.acceptedBy,
-      this.acceptedDate,
-      this.applyTaxAfterDiscount,
-      this.billEmail,
-      this.customerMemo,
-      this.customField,
-      this.emailStatus,
-      this.expirationDate,
-      this.freeFormAddress,
-      this.homeTotalAmt,
-      this.printStatus,
-      this.recurDataRef,
-      this.shipDate,
-      this.shipFromAddr,
-      this.shipMethodRef,
-      this.taxExemptionRef,
-      this.txnStatus});
+        this.syncToken,
+        this.metaData,
+        this.shipAddr,
+        this.billAddr,
+        this.currencyRef,
+        this.salesTermRef,
+        this.line,
+        this.classRef,
+        this.customerRef,
+        this.txnTaxDetail,
+        this.transactionLocationType,
+        this.totalAmt,
+        this.privateNote,
+        this.globalTaxCalculation,
+        this.exchangeRate,
+        this.dueDate,
+        this.docNumber,
+        this.departmentRef,
+        this.linkedTxn,
+        this.txnDate,
+        this.acceptedBy,
+        this.acceptedDate,
+        this.applyTaxAfterDiscount,
+        this.billEmail,
+        this.customerMemo,
+        this.customField,
+        this.emailStatus,
+        this.expirationDate,
+        this.freeFormAddress,
+        this.homeTotalAmt,
+        this.printStatus,
+        this.recurDataRef,
+        this.shipDate,
+        this.shipFromAddr,
+        this.shipMethodRef,
+        this.taxExemptionRef,
+        this.txnStatus});
 
   factory Estimate.fromJson(Map<String, dynamic> json) =>
       _$EstimateFromJson(json);
@@ -1787,10 +1787,10 @@ class CustomField {
 
   CustomField(
       {this.name,
-      required this.definitionId,
-      this.stringValue,
-      this.type,
-      this.booleanValue});
+        required this.definitionId,
+        this.stringValue,
+        this.type,
+        this.booleanValue});
 
   factory CustomField.fromJson(Map<String, dynamic> json) =>
       _$CustomFieldFromJson(json);
@@ -1971,53 +1971,53 @@ class Invoice {
 
   Invoice(
       {this.id,
-      this.classRef,
-      this.shipMethodRef,
-      this.shipFromAddr,
-      this.shipDate,
-      this.recurDataRef,
-      this.printStatus,
-      this.homeTotalAmt,
-      this.freeFormAddress,
-      this.emailStatus,
-      this.customField,
-      this.customerMemo,
-      this.billEmail,
-      this.applyTaxAfterDiscount,
-      this.txnDate,
-      this.linkedTxn,
-      this.departmentRef,
-      this.docNumber,
-      this.dueDate,
-      this.exchangeRate,
-      this.globalTaxCalculation,
-      this.privateNote,
-      this.totalAmt,
-      this.transactionLocationType,
-      this.txnTaxDetail,
-      this.customerRef,
-      this.line,
-      this.salesTermRef,
-      this.currencyRef,
-      this.shipAddr,
-      this.metaData,
-      this.syncToken,
-      this.balance,
-      this.homeBalance,
-      this.allowIPNPayment,
-      this.allowOnlineACHPayment,
-      this.allowOnlineCreditCardPayment,
-      this.allowOnlinePayment,
-      this.billAddr,
-      this.billEmailBcc,
-      this.billEmailCc,
-      this.deliveryInfo,
-      this.deposit,
-      this.depositToAccountRef,
-      this.invoiceLink,
-      this.taxExemptionRef,
-      this.trackingNum,
-      this.txnSource});
+        this.classRef,
+        this.shipMethodRef,
+        this.shipFromAddr,
+        this.shipDate,
+        this.recurDataRef,
+        this.printStatus,
+        this.homeTotalAmt,
+        this.freeFormAddress,
+        this.emailStatus,
+        this.customField,
+        this.customerMemo,
+        this.billEmail,
+        this.applyTaxAfterDiscount,
+        this.txnDate,
+        this.linkedTxn,
+        this.departmentRef,
+        this.docNumber,
+        this.dueDate,
+        this.exchangeRate,
+        this.globalTaxCalculation,
+        this.privateNote,
+        this.totalAmt,
+        this.transactionLocationType,
+        this.txnTaxDetail,
+        this.customerRef,
+        this.line,
+        this.salesTermRef,
+        this.currencyRef,
+        this.shipAddr,
+        this.metaData,
+        this.syncToken,
+        this.balance,
+        this.homeBalance,
+        this.allowIPNPayment,
+        this.allowOnlineACHPayment,
+        this.allowOnlineCreditCardPayment,
+        this.allowOnlinePayment,
+        this.billAddr,
+        this.billEmailBcc,
+        this.billEmailCc,
+        this.deliveryInfo,
+        this.deposit,
+        this.depositToAccountRef,
+        this.invoiceLink,
+        this.taxExemptionRef,
+        this.trackingNum,
+        this.txnSource});
 
   factory Invoice.fromJson(Map<String, dynamic> json) =>
       _$InvoiceFromJson(json);
@@ -2169,42 +2169,42 @@ class Item {
 
   Item(
       {this.syncToken,
-      this.metaData,
-      this.classRef,
-      this.id,
-      this.description,
-      this.taxClassificationRef,
-      this.unitPrice,
-      this.type,
-      this.name,
-      this.active,
-      this.taxable,
-      this.source,
-      this.level,
-      this.parentRef,
-      this.fullyQualifiedName,
-      this.abatementRate,
-      this.assetAccountRef,
-      this.expenseAccountRef,
-      this.incomeAccountRef,
-      this.invStartDate,
-      this.itemCategoryType,
-      this.prefVendorRef,
-      this.purchaseCost,
-      this.purchaseDesc,
-      this.purchaseTaxCodeRef,
-      this.purchaseTaxIncluded,
-      this.qtyOnHand,
-      this.reorderPoint,
-      this.reverseChargeRate,
-      this.salesTaxCodeRef,
-      this.salesTaxIncluded,
-      this.serviceType,
-      this.sku,
-      this.subItem,
-      this.trackQtyOnHand,
-      this.uQCDisplayText,
-      this.uQCId});
+        this.metaData,
+        this.classRef,
+        this.id,
+        this.description,
+        this.taxClassificationRef,
+        this.unitPrice,
+        this.type,
+        this.name,
+        this.active,
+        this.taxable,
+        this.source,
+        this.level,
+        this.parentRef,
+        this.fullyQualifiedName,
+        this.abatementRate,
+        this.assetAccountRef,
+        this.expenseAccountRef,
+        this.incomeAccountRef,
+        this.invStartDate,
+        this.itemCategoryType,
+        this.prefVendorRef,
+        this.purchaseCost,
+        this.purchaseDesc,
+        this.purchaseTaxCodeRef,
+        this.purchaseTaxIncluded,
+        this.qtyOnHand,
+        this.reorderPoint,
+        this.reverseChargeRate,
+        this.salesTaxCodeRef,
+        this.salesTaxIncluded,
+        this.serviceType,
+        this.sku,
+        this.subItem,
+        this.trackQtyOnHand,
+        this.uQCDisplayText,
+        this.uQCId});
 
   factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
 
@@ -2212,42 +2212,42 @@ class Item {
 
   Item copyWith(
       {String? id,
-      String? itemCategoryType,
-      String? name,
-      String? syncToken,
-      String? invStartDate,
-      String? type,
-      double? qtyOnHand,
-      ReferenceType? assetAccountRef,
-      String? sku,
-      bool? salesTaxIncluded,
-      bool? trackQtyOnHand,
-      ReferenceType? salesTaxCodeRef,
-      ReferenceType? classRef,
-      String? source,
-      bool? purchaseTaxIncluded,
-      String? description,
-      double? abatementRate,
-      bool? subItem,
-      bool? taxable,
-      String? uQCDisplayText,
-      double? reorderPoint,
-      String? purchaseDesc,
-      ModificationMetaData? metaData,
-      ReferenceType? prefVendorRef,
-      bool? active,
-      String? uQCId,
-      double? reverseChargeRate,
-      ReferenceType? purchaseTaxCodeRef,
-      String? serviceType,
-      double? purchaseCost,
-      ReferenceType? parentRef,
-      double? unitPrice,
-      String? fullyQualifiedName,
-      ReferenceType? expenseAccountRef,
-      int? level,
-      ReferenceType? incomeAccountRef,
-      ReferenceType? taxClassificationRef}) {
+        String? itemCategoryType,
+        String? name,
+        String? syncToken,
+        String? invStartDate,
+        String? type,
+        double? qtyOnHand,
+        ReferenceType? assetAccountRef,
+        String? sku,
+        bool? salesTaxIncluded,
+        bool? trackQtyOnHand,
+        ReferenceType? salesTaxCodeRef,
+        ReferenceType? classRef,
+        String? source,
+        bool? purchaseTaxIncluded,
+        String? description,
+        double? abatementRate,
+        bool? subItem,
+        bool? taxable,
+        String? uQCDisplayText,
+        double? reorderPoint,
+        String? purchaseDesc,
+        ModificationMetaData? metaData,
+        ReferenceType? prefVendorRef,
+        bool? active,
+        String? uQCId,
+        double? reverseChargeRate,
+        ReferenceType? purchaseTaxCodeRef,
+        String? serviceType,
+        double? purchaseCost,
+        ReferenceType? parentRef,
+        double? unitPrice,
+        String? fullyQualifiedName,
+        ReferenceType? expenseAccountRef,
+        int? level,
+        ReferenceType? incomeAccountRef,
+        ReferenceType? taxClassificationRef}) {
     return Item(
         id: id ?? this.id,
         itemCategoryType: itemCategoryType ?? this.itemCategoryType,
@@ -2286,7 +2286,7 @@ class Item {
         level: level ?? this.level,
         incomeAccountRef: incomeAccountRef ?? this.incomeAccountRef,
         taxClassificationRef:
-            taxClassificationRef ?? this.taxClassificationRef);
+        taxClassificationRef ?? this.taxClassificationRef);
   }
 
   @override
@@ -2379,23 +2379,23 @@ class Payment {
 
   Payment(
       {this.id,
-      this.metaData,
-      this.syncToken,
-      this.txnSource,
-      this.depositToAccountRef,
-      this.customerRef,
-      this.transactionLocationType,
-      this.totalAmt,
-      this.privateNote,
-      this.exchangeRate,
-      this.txnDate,
-      this.currencyRef,
-      this.taxExemptionRef,
-      this.paymentMethodRef,
-      this.aRAccountRef,
-      this.creditCardPayment,
-      this.paymentRefNum,
-      this.unappliedAmt});
+        this.metaData,
+        this.syncToken,
+        this.txnSource,
+        this.depositToAccountRef,
+        this.customerRef,
+        this.transactionLocationType,
+        this.totalAmt,
+        this.privateNote,
+        this.exchangeRate,
+        this.txnDate,
+        this.currencyRef,
+        this.taxExemptionRef,
+        this.paymentMethodRef,
+        this.aRAccountRef,
+        this.creditCardPayment,
+        this.paymentRefNum,
+        this.unappliedAmt});
 
   factory Payment.fromJson(Map<String, dynamic> json) =>
       _$PaymentFromJson(json);
@@ -2485,13 +2485,13 @@ class CreditChargeInfo {
 
   CreditChargeInfo(
       {this.type,
-      this.amount,
-      this.postalCode,
-      this.billAddrStreet,
-      this.ccExpiryMonth,
-      this.ccExpiryYear,
-      this.nameOnAcct,
-      this.processPayment});
+        this.amount,
+        this.postalCode,
+        this.billAddrStreet,
+        this.ccExpiryMonth,
+        this.ccExpiryYear,
+        this.nameOnAcct,
+        this.processPayment});
 
   factory CreditChargeInfo.fromJson(Map<String, dynamic> json) =>
       _$CreditChargeInfoFromJson(json);
@@ -2554,18 +2554,18 @@ class Preferences {
 
   Preferences(
       {this.syncToken,
-      this.metaData,
-      this.id,
-      this.accountingInfoPrefs,
-      this.currencyPrefs,
-      this.emailMessagesPrefs,
-      this.otherPrefs,
-      this.productAndServicesPrefs,
-      this.reportPrefs,
-      this.salesFormsPrefs,
-      this.taxPrefs,
-      this.timeTrackingPrefs,
-      this.vendorAndPurchasesPrefs});
+        this.metaData,
+        this.id,
+        this.accountingInfoPrefs,
+        this.currencyPrefs,
+        this.emailMessagesPrefs,
+        this.otherPrefs,
+        this.productAndServicesPrefs,
+        this.reportPrefs,
+        this.salesFormsPrefs,
+        this.taxPrefs,
+        this.timeTrackingPrefs,
+        this.vendorAndPurchasesPrefs});
 
   factory Preferences.fromJson(Map<String, dynamic> json) =>
       _$PreferencesFromJson(json);
@@ -2594,9 +2594,9 @@ class EmailMessagesPrefs {
 
   EmailMessagesPrefs(
       {this.estimateMessage,
-      this.invoiceMessage,
-      this.salesReceiptMessage,
-      this.statementMessage});
+        this.invoiceMessage,
+        this.salesReceiptMessage,
+        this.statementMessage});
 
   factory EmailMessagesPrefs.fromJson(Map<String, dynamic> json) =>
       _$EmailMessagesPrefsFromJson(json);
@@ -2646,9 +2646,9 @@ class ProductAndServicesPrefs {
 
   ProductAndServicesPrefs(
       {this.forPurchase,
-      this.forSales,
-      this.quantityOnHand,
-      this.quantityWithPriceAndRate});
+        this.forSales,
+        this.quantityOnHand,
+        this.quantityWithPriceAndRate});
 
   factory ProductAndServicesPrefs.fromJson(Map<String, dynamic> json) =>
       _$ProductAndServicesPrefsFromJson(json);
@@ -2716,15 +2716,15 @@ class AccountingInfoPrefs {
 
   AccountingInfoPrefs(
       {this.bookCloseDate,
-      this.classTrackingPerTxn,
-      this.classTrackingPerTxnLine,
-      this.customerTerminology,
-      this.departmentTerminology,
-      this.firstMonthOfFiscalYear,
-      this.taxForm,
-      this.taxYearMonth,
-      this.trackDepartments,
-      this.useAccountNumbers});
+        this.classTrackingPerTxn,
+        this.classTrackingPerTxnLine,
+        this.customerTerminology,
+        this.departmentTerminology,
+        this.firstMonthOfFiscalYear,
+        this.taxForm,
+        this.taxYearMonth,
+        this.trackDepartments,
+        this.useAccountNumbers});
 
   factory AccountingInfoPrefs.fromJson(Map<String, dynamic> json) =>
       _$AccountingInfoPrefsFromJson(json);
@@ -2807,27 +2807,27 @@ class SalesFormsPrefs {
 
   SalesFormsPrefs(
       {this.estimateMessage,
-      this.customFields,
-      this.allowDeposit,
-      this.allowDiscount,
-      this.allowEstimates,
-      this.allowServiceDate,
-      this.allowShipping,
-      this.autoApplyCredit,
-      this.customTxnNumbers,
-      this.defaultCustomerMessage,
-      this.defaultDiscountAccount,
-      this.defaultShippingAccount,
-      this.defaultTerms,
-      this.emailCopyToCompany,
-      this.eTransactionAttachPDF,
-      this.eTransactionEnabledStatus,
-      this.eTransactionPaymentEnabled,
-      this.iPNSupportEnabled,
-      this.salesEmailBcc,
-      this.salesEmailCc,
-      this.usingPriceLevels,
-      this.usingProgressInvoicing});
+        this.customFields,
+        this.allowDeposit,
+        this.allowDiscount,
+        this.allowEstimates,
+        this.allowServiceDate,
+        this.allowShipping,
+        this.autoApplyCredit,
+        this.customTxnNumbers,
+        this.defaultCustomerMessage,
+        this.defaultDiscountAccount,
+        this.defaultShippingAccount,
+        this.defaultTerms,
+        this.emailCopyToCompany,
+        this.eTransactionAttachPDF,
+        this.eTransactionEnabledStatus,
+        this.eTransactionPaymentEnabled,
+        this.iPNSupportEnabled,
+        this.salesEmailBcc,
+        this.salesEmailCc,
+        this.usingPriceLevels,
+        this.usingProgressInvoicing});
 
   factory SalesFormsPrefs.fromJson(Map<String, dynamic> json) =>
       _$SalesFormsPrefsFromJson(json);
@@ -2865,12 +2865,12 @@ class VendorAndPurchasesPrefs {
 
   VendorAndPurchasesPrefs(
       {this.defaultTerms,
-      this.billableExpenseTracking,
-      this.defaultMarkup,
-      this.defaultMarkupAccount,
-      this.pOCustomFields,
-      this.tPAREnabled,
-      this.trackingByCustomer});
+        this.billableExpenseTracking,
+        this.defaultMarkup,
+        this.defaultMarkupAccount,
+        this.pOCustomFields,
+        this.tPAREnabled,
+        this.trackingByCustomer});
 
   factory VendorAndPurchasesPrefs.fromJson(Map<String, dynamic> json) =>
       _$VendorAndPurchasesPrefsFromJson(json);
@@ -2944,10 +2944,10 @@ class TimeTrackingPrefs {
 
   TimeTrackingPrefs(
       {this.usingSalesTax,
-      this.billCustomers,
-      this.markTimeEntriesBillable,
-      this.showBillRateToAll,
-      this.workWeekStartDate});
+        this.billCustomers,
+        this.markTimeEntriesBillable,
+        this.showBillRateToAll,
+        this.workWeekStartDate});
 
   factory TimeTrackingPrefs.fromJson(Map<String, dynamic> json) =>
       _$TimeTrackingPrefsFromJson(json);
@@ -3074,19 +3074,19 @@ class ProfitHeader {
 
   ProfitHeader(
       {this.className,
-      this.currency,
-      this.customer,
-      this.department,
-      this.employee,
-      this.endPeriod,
-      this.item,
-      this.options,
-      this.reportBasis,
-      this.reportName,
-      this.startPeriod,
-      this.summarizeColumnsBy,
-      this.time,
-      this.vendor});
+        this.currency,
+        this.customer,
+        this.department,
+        this.employee,
+        this.endPeriod,
+        this.item,
+        this.options,
+        this.reportBasis,
+        this.reportName,
+        this.startPeriod,
+        this.summarizeColumnsBy,
+        this.time,
+        this.vendor});
 
   factory ProfitHeader.fromJson(Map<String, dynamic> json) =>
       _$ProfitHeaderFromJson(json);
@@ -3340,14 +3340,14 @@ class TaxAgency {
 
   TaxAgency(
       {this.id,
-      this.metaData,
-      this.syncToken,
-      this.displayName,
-      this.lastFileDate,
-      this.taxAgencyConfig,
-      this.taxRegistrationNumber,
-      this.taxTrackedOnPurchases,
-      this.taxTrackedOnSales});
+        this.metaData,
+        this.syncToken,
+        this.displayName,
+        this.lastFileDate,
+        this.taxAgencyConfig,
+        this.taxRegistrationNumber,
+        this.taxTrackedOnPurchases,
+        this.taxTrackedOnSales});
 
   factory TaxAgency.fromJson(Map<String, dynamic> json) =>
       _$TaxAgencyFromJson(json);
@@ -3613,43 +3613,43 @@ class Vendor {
 
   Vendor(
       {this.displayName,
-      this.syncToken,
-      this.metaData,
-      this.id,
-      this.source,
-      this.active,
-      this.balance,
-      this.currencyRef,
-      this.billAddr,
-      this.costRate,
-      this.billRate,
-      this.primaryPhone,
-      this.familyName,
-      this.givenName,
-      this.middleName,
-      this.mobile,
-      this.primaryEmailAddr,
-      this.printOnCheckName,
-      this.suffix,
-      this.title,
-      this.gSTRegistrationType,
-      this.gSTIN,
-      this.fax,
-      this.businessNumber,
-      this.alternatePhone,
-      this.companyName,
-      this.webAddr,
-      this.aPAccountRef,
-      this.acctNum,
-      this.hasTPAR,
-      this.otherContactInfo,
-      this.t4AEligible,
-      this.t5018Eligible,
-      this.taxIdentifier,
-      this.taxReportingBasis,
-      this.termRef,
-      this.vendor1099,
-      this.vendorPaymentBankDetail});
+        this.syncToken,
+        this.metaData,
+        this.id,
+        this.source,
+        this.active,
+        this.balance,
+        this.currencyRef,
+        this.billAddr,
+        this.costRate,
+        this.billRate,
+        this.primaryPhone,
+        this.familyName,
+        this.givenName,
+        this.middleName,
+        this.mobile,
+        this.primaryEmailAddr,
+        this.printOnCheckName,
+        this.suffix,
+        this.title,
+        this.gSTRegistrationType,
+        this.gSTIN,
+        this.fax,
+        this.businessNumber,
+        this.alternatePhone,
+        this.companyName,
+        this.webAddr,
+        this.aPAccountRef,
+        this.acctNum,
+        this.hasTPAR,
+        this.otherContactInfo,
+        this.t4AEligible,
+        this.t5018Eligible,
+        this.taxIdentifier,
+        this.taxReportingBasis,
+        this.termRef,
+        this.vendor1099,
+        this.vendorPaymentBankDetail});
 
   factory Vendor.fromJson(Map<String, dynamic> json) => _$VendorFromJson(json);
 
@@ -3698,9 +3698,9 @@ class VendorPaymentBankDetail {
 
   VendorPaymentBankDetail(
       {this.bankAccountName,
-      this.bankAccountNumber,
-      this.bankBranchIdentifier,
-      this.statementText});
+        this.bankAccountNumber,
+        this.bankBranchIdentifier,
+        this.statementText});
 
   factory VendorPaymentBankDetail.fromJson(Map<String, dynamic> json) =>
       _$VendorPaymentBankDetailFromJson(json);
@@ -3750,19 +3750,19 @@ class BankAccount {
 
   BankAccount(
       {this.id,
-      this.name,
-      this.country,
-      this.accountType,
-      this.accountNumber,
-      this.bankCode,
-      this.created,
-      this.isDefault,
-      this.entityId,
-      this.entityType,
-      this.inputType,
-      this.phone,
-      this.routingNumber,
-      this.updated});
+        this.name,
+        this.country,
+        this.accountType,
+        this.accountNumber,
+        this.bankCode,
+        this.created,
+        this.isDefault,
+        this.entityId,
+        this.entityType,
+        this.inputType,
+        this.phone,
+        this.routingNumber,
+        this.updated});
 
   factory BankAccount.fromJson(Map<String, dynamic> json) =>
       _$BankAccountFromJson(json);
@@ -3771,19 +3771,19 @@ class BankAccount {
 
   BankAccount copyWith(
       {String? id,
-      String? name,
-      String? accountNumber,
-      String? phone,
-      BankAccountTypeEnum? accountType,
-      String? routingNumber,
-      String? updated,
-      bool? isDefault,
-      String? country,
-      String? inputType,
-      String? entityType,
-      String? created,
-      String? bankCode,
-      String? entityId}) {
+        String? name,
+        String? accountNumber,
+        String? phone,
+        BankAccountTypeEnum? accountType,
+        String? routingNumber,
+        String? updated,
+        bool? isDefault,
+        String? country,
+        String? inputType,
+        String? entityType,
+        String? created,
+        String? bankCode,
+        String? entityId}) {
     return BankAccount(
         id: id ?? this.id,
         name: name ?? this.name,
@@ -3852,22 +3852,22 @@ class Card {
 
   Card(
       {this.updated,
-      this.entityType,
-      this.entityId,
-      this.created,
-      this.name,
-      this.id,
-      this.address,
-      this.cardType,
-      this.commercialCardCode,
-      this.cvc,
-      this.expMonth,
-      this.expYear,
-      this.isBusiness,
-      this.isDefault,
-      this.isLevel3Eligible,
-      this.number,
-      this.zeroDollarVerification});
+        this.entityType,
+        this.entityId,
+        this.created,
+        this.name,
+        this.id,
+        this.address,
+        this.cardType,
+        this.commercialCardCode,
+        this.cvc,
+        this.expMonth,
+        this.expYear,
+        this.isBusiness,
+        this.isDefault,
+        this.isLevel3Eligible,
+        this.number,
+        this.zeroDollarVerification});
 
   factory Card.fromJson(Map<String, dynamic> json) => _$CardFromJson(json);
 
@@ -3893,10 +3893,10 @@ class Address {
 
   Address(
       {this.country,
-      this.postalCode,
-      this.city,
-      this.region,
-      this.streetAddress});
+        this.postalCode,
+        this.city,
+        this.region,
+        this.streetAddress});
 
   factory Address.fromJson(Map<String, dynamic> json) =>
       _$AddressFromJson(json);
@@ -3970,20 +3970,20 @@ class Charge {
 
   Charge(
       {this.status,
-      this.id,
-      this.created,
-      this.currency,
-      this.amount,
-      this.authCode,
-      this.description,
-      this.avsStreet,
-      this.avsZip,
-      this.capture,
-      this.captureDetail,
-      this.card,
-      this.cardSecurityCodeMatch,
-      this.context,
-      this.token});
+        this.id,
+        this.created,
+        this.currency,
+        this.amount,
+        this.authCode,
+        this.description,
+        this.avsStreet,
+        this.avsZip,
+        this.capture,
+        this.captureDetail,
+        this.card,
+        this.cardSecurityCodeMatch,
+        this.context,
+        this.token});
 
   factory Charge.fromJson(Map<String, dynamic> json) => _$ChargeFromJson(json);
 
@@ -4036,12 +4036,12 @@ class PaymentContext {
 
   PaymentContext(
       {this.mobile,
-      this.deviceInfo,
-      this.isEcommerce,
-      this.lodging,
-      this.recurring,
-      this.restaurant,
-      this.tax});
+        this.deviceInfo,
+        this.isEcommerce,
+        this.lodging,
+        this.recurring,
+        this.restaurant,
+        this.tax});
 
   factory PaymentContext.fromJson(Map<String, dynamic> json) =>
       _$PaymentContextFromJson(json);
@@ -4074,13 +4074,13 @@ class DeviceInfo {
 
   DeviceInfo(
       {this.id,
-      this.type,
-      this.encrypted,
-      this.ipAddress,
-      this.latitude,
-      this.longitude,
-      this.macAddress,
-      this.phoneNumber});
+        this.type,
+        this.encrypted,
+        this.ipAddress,
+        this.latitude,
+        this.longitude,
+        this.macAddress,
+        this.phoneNumber});
 
   factory DeviceInfo.fromJson(Map<String, dynamic> json) =>
       _$DeviceInfoFromJson(json);
@@ -4107,10 +4107,10 @@ class Restaurant {
 
   Restaurant(
       {this.taxAmount,
-      this.beverageAmount,
-      this.foodAmount,
-      this.serverID,
-      this.tipAmount});
+        this.beverageAmount,
+        this.foodAmount,
+        this.serverID,
+        this.tipAmount});
 
   factory Restaurant.fromJson(Map<String, dynamic> json) =>
       _$RestaurantFromJson(json);
@@ -4145,14 +4145,14 @@ class Lodging {
 
   Lodging(
       {this.chargeType,
-      this.checkInDate,
-      this.checkOutDate,
-      this.extraCharges,
-      this.folioID,
-      this.lengthOfStay,
-      this.roomRate,
-      this.specialProgram,
-      this.totalAuthAmount});
+        this.checkInDate,
+        this.checkOutDate,
+        this.extraCharges,
+        this.folioID,
+        this.lengthOfStay,
+        this.roomRate,
+        this.specialProgram,
+        this.totalAuthAmount});
 
   factory Lodging.fromJson(Map<String, dynamic> json) =>
       _$LodgingFromJson(json);
@@ -4197,17 +4197,17 @@ class ECheck {
 
   ECheck(
       {this.id,
-      this.created,
-      this.amount,
-      this.description,
-      this.context,
-      this.token,
-      this.authCode,
-      this.status,
-      this.bankAccount,
-      this.bankAccountOnFile,
-      this.checkNumber,
-      this.paymentMode});
+        this.created,
+        this.amount,
+        this.description,
+        this.context,
+        this.token,
+        this.authCode,
+        this.status,
+        this.bankAccount,
+        this.bankAccountOnFile,
+        this.checkNumber,
+        this.paymentMode});
 
   factory ECheck.fromJson(Map<String, dynamic> json) => _$ECheckFromJson(json);
 
@@ -4252,17 +4252,17 @@ class UrlDiscovery {
 
   UrlDiscovery(
       {required this.authorization_endpoint,
-      required this.claims_supported,
-      required this.id_token_signing_alg_values_supported,
-      required this.issuer,
-      required this.jwks_uri,
-      required this.response_types_supported,
-      required this.revocation_endpoint,
-      required this.scopes_supported,
-      required this.subject_types_supported,
-      required this.token_endpoint,
-      required this.token_endpoint_auth_methods_supported,
-      required this.userinfo_endpoint});
+        required this.claims_supported,
+        required this.id_token_signing_alg_values_supported,
+        required this.issuer,
+        required this.jwks_uri,
+        required this.response_types_supported,
+        required this.revocation_endpoint,
+        required this.scopes_supported,
+        required this.subject_types_supported,
+        required this.token_endpoint,
+        required this.token_endpoint_auth_methods_supported,
+        required this.userinfo_endpoint});
 
   factory UrlDiscovery.fromJson(Map<String, dynamic> json) =>
       _$UrlDiscoveryFromJson(json);
@@ -4288,7 +4288,7 @@ class Scope {
   static final Phone = Scope._("phone", "phone");
   static final Address = Scope._("address", "address");
   static final Accounting =
-      Scope._("payment", "com.intuit.quickbooks.accounting");
+  Scope._("payment", "com.intuit.quickbooks.accounting");
   static final Payments = Scope._("payment", "com.intuit.quickbooks.payment");
 
   static final _values = [
@@ -4327,10 +4327,10 @@ class TokenResponse {
 
   TokenResponse(
       {this.refresh_token,
-      this.access_token,
-      this.expires_in,
-      this.idToken,
-      this.x_refresh_token_expires_in});
+        this.access_token,
+        this.expires_in,
+        this.idToken,
+        this.x_refresh_token_expires_in});
 
   factory TokenResponse.fromJson(Map<String, dynamic> json) =>
       _$TokenResponseFromJson(json);
@@ -4393,20 +4393,20 @@ class QueryResponse {
 
   QueryResponse(
       {this.account,
-      this.companyInfo,
-      this.bill,
-      this.customer,
-      this.employee,
-      this.estimate,
-      this.invoice,
-      this.item,
-      this.payment,
-      this.preferences,
-      this.purchaseOrder,
-      this.taxAgency,
-      this.vendor,
-      this.maxResults,
-      this.startPosition});
+        this.companyInfo,
+        this.bill,
+        this.customer,
+        this.employee,
+        this.estimate,
+        this.invoice,
+        this.item,
+        this.payment,
+        this.preferences,
+        this.purchaseOrder,
+        this.taxAgency,
+        this.vendor,
+        this.maxResults,
+        this.startPosition});
 
   factory QueryResponse.fromJson(Map<String, dynamic> json) =>
       _$QueryResponseFromJson(json);
@@ -4471,18 +4471,18 @@ class ProfitAndLossQuery {
 
   ProfitAndLossQuery(
       {this.customer,
-      this.vendor,
-      this.item,
-      this.department,
-      this.accounting_method,
-      this.adjusted_gain_loss,
-      this.date_macro,
-      this.end_date,
-      this.qzurl,
-      this.reportClass,
-      this.sort_order,
-      this.start_date,
-      this.summarize_column_by});
+        this.vendor,
+        this.item,
+        this.department,
+        this.accounting_method,
+        this.adjusted_gain_loss,
+        this.date_macro,
+        this.end_date,
+        this.qzurl,
+        this.reportClass,
+        this.sort_order,
+        this.start_date,
+        this.summarize_column_by});
 
   factory ProfitAndLossQuery.fromJson(Map<String, dynamic> json) =>
       _$ProfitAndLossQueryFromJson(json);
@@ -4566,37 +4566,37 @@ class TransactionListQuery {
 
   TransactionListQuery(
       {this.date_macro,
-      this.payment_method,
-      this.duedate_macro,
-      this.arpaid,
-      this.bothamount,
-      this.transaction_type,
-      this.docnum,
-      this.start_moddate,
-      this.source_account_type,
-      this.group_by,
-      this.start_date,
-      this.department,
-      this.start_duedate,
-      this.columns,
-      this.end_duedate,
-      this.vendor,
-      this.end_date,
-      this.memo,
-      this.appaid,
-      this.moddate_macro,
-      this.printed,
-      this.createdate_macro,
-      this.cleared,
-      this.customer,
-      this.qzurl,
-      this.term,
-      this.end_createdate,
-      this.name,
-      this.sort_by,
-      this.sort_order,
-      this.start_createdate,
-      this.end_moddate});
+        this.payment_method,
+        this.duedate_macro,
+        this.arpaid,
+        this.bothamount,
+        this.transaction_type,
+        this.docnum,
+        this.start_moddate,
+        this.source_account_type,
+        this.group_by,
+        this.start_date,
+        this.department,
+        this.start_duedate,
+        this.columns,
+        this.end_duedate,
+        this.vendor,
+        this.end_date,
+        this.memo,
+        this.appaid,
+        this.moddate_macro,
+        this.printed,
+        this.createdate_macro,
+        this.cleared,
+        this.customer,
+        this.qzurl,
+        this.term,
+        this.end_createdate,
+        this.name,
+        this.sort_by,
+        this.sort_order,
+        this.start_createdate,
+        this.end_moddate});
 
   Map<String, dynamic> toJson() => _$TransactionListQueryToJson(this);
 
@@ -4699,19 +4699,19 @@ class TransactionHeader {
 
   TransactionHeader(
       {this.className,
-      this.currency,
-      this.customer,
-      this.department,
-      this.employee,
-      this.endPeriod,
-      this.item,
-      this.options,
-      this.reportBasis,
-      this.reportName,
-      this.startPeriod,
-      this.summarizeColumnsBy,
-      this.time,
-      this.vendor});
+        this.currency,
+        this.customer,
+        this.department,
+        this.employee,
+        this.endPeriod,
+        this.item,
+        this.options,
+        this.reportBasis,
+        this.reportName,
+        this.startPeriod,
+        this.summarizeColumnsBy,
+        this.time,
+        this.vendor});
 
   factory TransactionHeader.fromJson(Map<String, dynamic> json) =>
       _$TransactionHeaderFromJson(json);
