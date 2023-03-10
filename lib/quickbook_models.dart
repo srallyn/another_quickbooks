@@ -3186,15 +3186,15 @@ class TransactionRow {
   final RowHeader? header;
 
   @JsonKey(name: "Rows")
-  final List<TransactionRow>? rows;
+  final TransactionRows? rows;
 
-  @JsonKey(name: "Columns")
-  final List<TransactionColumn>? columns;
+  @JsonKey(name: "ColData")
+  final List<ColData>? colData;
 
   @JsonKey(name: "Summary")
   final RowSummary? summary;
 
-  TransactionRow({this.rows, this.header, this.columns, this.summary});
+  TransactionRow({this.rows, this.header, this.colData, this.summary});
 
   factory TransactionRow.fromJson(Map<String, dynamic> json) =>
       _$TransactionRowFromJson(json);
