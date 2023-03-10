@@ -2650,14 +2650,12 @@ Map<String, dynamic> _$TransactionRowsToJson(TransactionRows instance) {
 
 TransactionRow _$TransactionRowFromJson(Map<String, dynamic> json) =>
     TransactionRow(
-      rows: (json['Rows']?['Row'] as List<dynamic>?)
-          ?.map((e) => TransactionRow.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      rows: TransactionRows.fromJson(json['Rows']),
       header: json['Header'] == null
           ? null
           : RowHeader.fromJson(json['Header'] as Map<String, dynamic>),
-      columns: (json['Columns'] as List<dynamic>?)
-          ?.map((e) => TransactionColumn.fromJson(e as Map<String, dynamic>))
+      colData: (json['ColData'] as List<dynamic>?)
+          ?.map((e) => ColData.fromJson(e as Map<String, dynamic>))
           .toList(),
       summary: json['Summary'] == null ? null : RowSummary.fromJson(
           json['Summary'] as Map<String, dynamic>),
@@ -2674,7 +2672,8 @@ Map<String, dynamic> _$TransactionRowToJson(TransactionRow instance) {
 
   writeNotNull('Header', instance.header);
   writeNotNull('Rows', instance.rows);
-  writeNotNull('Columns', instance.columns);
+  writeNotNull('ColData', instance.colData);
+  writeNotNull('Summary', instance.summary);
   return val;
 }
 
