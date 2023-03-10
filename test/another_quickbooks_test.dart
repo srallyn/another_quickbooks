@@ -1857,7 +1857,7 @@ void main() {
     //print(token);
     expect(token.length, isNot(0));
 
-    var resultsFound = await quickClient.getAccountingClient().queryReport(
+    var resultsFound = await quickClient.getAccountingClient().queryProfitAndLossReport(
         realmId: realmId,
         query: ProfitAndLossQuery(
           start_date: "2015-06-01",

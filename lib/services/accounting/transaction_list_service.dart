@@ -7,25 +7,25 @@ import 'package:another_quickbooks/quickbook_models.dart';
 import 'package:another_quickbooks/services/authentication_service.dart';
 
 ///
-/// URL: https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/profitandloss
+/// URL: https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/transactionlist
 /// The information below provides a reference on how to access
-/// the Profit and Loss Summary report from the
+/// the Transaction List report from the
 /// QuickBooks Online Report Service.
 ///
-class ProfitAndLossService {
+class TransactionListService {
   final String baseUrl;
   final AuthenticationService authenticationService;
   final int minorVersion;
 
-  ProfitAndLossService(
+  TransactionListService(
       {required this.baseUrl, required this.authenticationService, this.minorVersion = 63});
 
 
   ///
-  /// Returns the Profit and Loss report for the query
+  /// Returns the Transaction List report for the query
   ///
-  Future<ProfitAndLoss> queryReport({
-    required ProfitAndLossQuery query,
+  Future<TransactionList> queryReport({
+    required TransactionListQuery query,
     String? realmId,
     String? authToken,
   }) async {
@@ -46,7 +46,7 @@ class ProfitAndLossService {
 
 
     Uri endpoint = Uri.https(
-        baseUrl, "/v3/company/$realmId/reports/ProfitAndLoss", params);
+        baseUrl, "/v3/company/$realmId/reports/TransactionList", params);
 
     //print (endpoint.toString());
 
@@ -55,24 +55,24 @@ class ProfitAndLossService {
 
     if (response.statusCode == 200) {
       //print (jsonDecode(response.body));
-      return ProfitAndLoss.fromJson(jsonDecode(response.body));
+      return TransactionList.fromJson(jsonDecode(response.body));
     }
     else {
-      throw ProfitAndLossException(statusCode: response.statusCode, message: response.body);
+      throw TransactionListException(statusCode: response.statusCode, message: response.body);
     }
   }
 
 }
 
-class ProfitAndLossException implements Exception {
+class TransactionListException implements Exception {
   final String? message;
   final int statusCode;
 
-  ProfitAndLossException({required this.statusCode, this.message});
+  TransactionListException({required this.statusCode, this.message});
 
   @override
   String toString() {
-    return "ProfitAndLossException: $statusCode - $message";
+    return "TransactionListException: $statusCode - $message";
   }
 }
 

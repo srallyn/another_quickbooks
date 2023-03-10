@@ -2464,6 +2464,100 @@ Map<String, dynamic> _$ProfitHeaderToJson(ProfitHeader instance) {
   return val;
 }
 
+TransactionList _$TransactionListFromJson(Map<String, dynamic> json) =>
+    TransactionList(
+      columns: json['Columns'] == null
+          ? null
+          : TransactionColumns.fromJson(json['Columns'] as Map<String, dynamic>),
+      header: json['Header'] == null
+          ? null
+          : TransactionHeader.fromJson(json['Header'] as Map<String, dynamic>),
+      rows: json['Rows'] == null
+          ? null
+          : TransactionRows.fromJson(json['Rows'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$TransactionListToJson(TransactionList instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('Header', instance.header);
+  writeNotNull('Rows', instance.rows);
+  writeNotNull('Columns', instance.columns);
+  return val;
+}
+
+TransactionColumns _$TransactionColumnsFromJson(Map<String, dynamic> json) =>
+    TransactionColumns(
+      columns: (json['Column'] as List<dynamic>?)
+          ?.map((e) => TransactionColumn.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$TransactionColumnsToJson(TransactionColumns instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('Column', instance.columns);
+  return val;
+}
+
+TransactionHeader _$TransactionHeaderFromJson(Map<String, dynamic> json) =>
+    TransactionHeader(
+      className: json['Class'] as String?,
+      currency: json['Currency'] as String?,
+      customer: json['Customer'] as String?,
+      department: json['Department'] as String?,
+      employee: json['Employee'] as String?,
+      endPeriod: json['EndPeriod'] as String?,
+      item: json['Item'] as String?,
+      options: (json['Option'] as List<dynamic>?)
+          ?.map((e) => Option.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      reportBasis: json['ReportBasis'] as String?,
+      reportName: json['ReportName'] as String?,
+      startPeriod: json['StartPeriod'] as String?,
+      summarizeColumnsBy: json['SummarizeColumnsBy'] as String?,
+      time: json['Time'] as String?,
+      vendor: json['Vendor'] as String?,
+    );
+
+Map<String, dynamic> _$TransactionHeaderToJson(TransactionHeader instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('Customer', instance.customer);
+  writeNotNull('ReportName', instance.reportName);
+  writeNotNull('Vendor', instance.vendor);
+  writeNotNull('Option', instance.options);
+  writeNotNull('Item', instance.item);
+  writeNotNull('Employee', instance.employee);
+  writeNotNull('ReportBasis', instance.reportBasis);
+  writeNotNull('StartPeriod', instance.startPeriod);
+  writeNotNull('Class', instance.className);
+  writeNotNull('Currency', instance.currency);
+  writeNotNull('EndPeriod', instance.endPeriod);
+  writeNotNull('Time', instance.time);
+  writeNotNull('Department', instance.department);
+  writeNotNull('SummarizeColumnsBy', instance.summarizeColumnsBy);
+  return val;
+}
+
 Option _$OptionFromJson(Map<String, dynamic> json) =>
     Option(
       name: json['name'] as String?,
@@ -2534,6 +2628,56 @@ Map<String, dynamic> _$ProfitRowToJson(ProfitRow instance) {
   return val;
 }
 
+TransactionRows _$TransactionRowsFromJson(Map<String, dynamic> json) =>
+    TransactionRows(
+      rows: (json['Row'] as List<dynamic>?)
+          ?.map((e) => TransactionRow.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$TransactionRowsToJson(TransactionRows instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('Row', instance.rows);
+  return val;
+}
+
+TransactionRow _$TransactionRowFromJson(Map<String, dynamic> json) =>
+    TransactionRow(
+      rows: (json['Rows']?['Row'] as List<dynamic>?)
+          ?.map((e) => TransactionRow.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      header: json['Header'] == null
+          ? null
+          : RowHeader.fromJson(json['Header'] as Map<String, dynamic>),
+      columns: (json['Columns'] as List<dynamic>?)
+          ?.map((e) => TransactionColumn.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      summary: json['Summary'] == null ? null : RowSummary.fromJson(
+          json['Summary'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$TransactionRowToJson(TransactionRow instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('Header', instance.header);
+  writeNotNull('Rows', instance.rows);
+  writeNotNull('Columns', instance.columns);
+  return val;
+}
+
 RowHeader _$RowHeaderFromJson(Map<String, dynamic> json) =>
     RowHeader(
       colData: (json['ColData'] as List<dynamic>?)
@@ -2583,6 +2727,26 @@ ProfitColumn _$ProfitColumnFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ProfitColumnToJson(ProfitColumn instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('ColType', instance.colType);
+  writeNotNull('ColTitle', instance.colTitle);
+  return val;
+}
+
+TransactionColumn _$TransactionColumnFromJson(Map<String, dynamic> json) =>
+    TransactionColumn(
+      colTitle: json['ColTitle'] as String?,
+      colType: json['ColType'] as String?,
+    );
+
+Map<String, dynamic> _$TransactionColumnToJson(TransactionColumn instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -3616,5 +3780,66 @@ Map<String, dynamic> _$ProfitAndLossQueryToJson(ProfitAndLossQuery instance) {
   writeNotNull('department', instance.department);
   writeNotNull('vendor', instance.vendor);
   writeNotNull('start_date', instance.start_date);
+  return val;
+}
+
+TransactionListQuery _$TransactionListQueryFromJson(Map<String, dynamic> json) =>
+    TransactionListQuery(
+        date_macro: json['date_macro'] as String?,
+        payment_method: json['payment_method'] as String?,
+        duedate_macro: json['duedate_macro'] as String?,
+        arpaid: json['arpaid'] as String?,
+        bothamount: json['bothamount'] as String?,
+        transaction_type: json['transaction_type'] as String?,
+        docnum: json['docnum'] as String?,
+        start_moddate: json['start_moddate'] as String?,
+        source_account_type: json['source_account_type'] as String?,
+        group_by: json['group_by'] as String?,
+        start_date: json['start_date'] as String?,
+        department: json['department'] as String?,
+        start_duedate: json['start_duedate'] as String?,
+        columns: json['columns'] as String?,
+        end_duedate: json['end_duedate'] as String?,
+        vendor: json['vendor'] as String?,
+        end_date: json['end_date'] as String?,
+        memo: json['memo'] as String?,
+        appaid: json['appaid'] as String?,
+        moddate_macro: json['moddate_macro'] as String?,
+        printed: json['printed'] as String?,
+        createdate_macro: json['createdate_macro'] as String?,
+        cleared: json['cleared'] as String?,
+        customer: json['customer'] as String?,
+        qzurl: json['qzurl'] as String?,
+        term: json['term'] as String?,
+        end_createdate: json['end_createdate'] as String?,
+        name: json['name'] as String?,
+        sort_by: json['sort_by'] as String?,
+        sort_order: json['sort_order'] as String?,
+        start_createdate: json['start_createdate'] as String?,
+        end_moddate: json['end_moddate'] as String?,
+    );
+
+Map<String, dynamic> _$TransactionListQueryToJson(TransactionListQuery instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('date_macro', instance.date_macro);
+  writeNotNull('payment_method', instance.payment_method);
+  writeNotNull('duedate_macro', instance.duedate_macro);
+  writeNotNull('arpaid', instance.arpaid);
+  writeNotNull('bothamount', instance.bothamount);
+  writeNotNull('transaction_type', instance.transaction_type);
+  writeNotNull('docnum', instance.docnum);
+  writeNotNull('start_moddate', instance.start_moddate);
+  writeNotNull('source_account_type', instance.source_account_type);
+  writeNotNull('group_by', instance.group_by);
+  writeNotNull('start_date', instance.start_date);
+  writeNotNull('department', instance.department);
+  writeNotNull('start_duedate', instance.start_duedate);
   return val;
 }

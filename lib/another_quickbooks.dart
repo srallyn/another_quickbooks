@@ -16,6 +16,7 @@ import 'package:another_quickbooks/services/accounting/preferences_service.dart'
 import 'package:another_quickbooks/services/accounting/profit_loss_service.dart';
 import 'package:another_quickbooks/services/accounting/purchase_order_service.dart';
 import 'package:another_quickbooks/services/accounting/tax_agency_service.dart';
+import 'package:another_quickbooks/services/accounting/transaction_list_service.dart';
 import 'package:another_quickbooks/services/accounting/vendor_service.dart';
 import 'package:another_quickbooks/services/authentication_service.dart';
 import 'package:another_quickbooks/services/discovery_service.dart';
@@ -648,6 +649,7 @@ class AccountingClient {
   late PaymentService _paymentService;
   late PreferencesService _preferencesService;
   late ProfitAndLossService _profitAndLossService;
+  late TransactionListService _transactionListService;
   late PurchaseOrderService _purchaseOrderService;
   late TaxAgencyService _taxAgencyService;
   late VendorService _vendorService;
@@ -707,6 +709,11 @@ class AccountingClient {
         minorVersion: minorVersion);
 
     _profitAndLossService = ProfitAndLossService(
+        baseUrl: baseUrl,
+        authenticationService: authenticationService,
+        minorVersion: minorVersion);
+
+    _transactionListService = TransactionListService(
         baseUrl: baseUrl,
         authenticationService: authenticationService,
         minorVersion: minorVersion);
@@ -1442,14 +1449,27 @@ class AccountingClient {
 
   // Profit And Loss
   ///
-  /// Returns the report for the query
+  /// Returns the Profit and Loss report for the query
   ///
-  Future<ProfitAndLoss> queryReport({
+  Future<ProfitAndLoss> queryProfitAndLossReport({
     required ProfitAndLossQuery query,
     String? realmId,
     String? authToken,
   }) async {
     return _profitAndLossService.queryReport(
+        query: query, realmId: realmId, authToken: authToken);
+  }
+
+  // Transaction List
+  ///
+  /// Returns the Transaction List report for the query
+  ///
+  Future<TransactionList> queryTransactionListReport({
+    required TransactionListQuery query,
+    String? realmId,
+    String? authToken,
+  }) async {
+    return _transactionListService.queryReport(
         query: query, realmId: realmId, authToken: authToken);
   }
 
