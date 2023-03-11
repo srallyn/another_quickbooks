@@ -6,8 +6,7 @@ part of 'quickbook_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Account _$AccountFromJson(Map<String, dynamic> json) =>
-    Account(
+Account _$AccountFromJson(Map<String, dynamic> json) => Account(
       id: json['Id'] as String?,
       name: json['Name'] as String?,
       accountAlias: json['AccountAlias'] as String?,
@@ -22,10 +21,10 @@ Account _$AccountFromJson(Map<String, dynamic> json) =>
       currencyRef: json['CurrencyRef'] == null
           ? null
           : CurrencyRefType.fromJson(
-          json['CurrencyRef'] as Map<String, dynamic>),
+              json['CurrencyRef'] as Map<String, dynamic>),
       currentBalance: (json['CurrentBalance'] as num?)?.toDouble(),
       currentBalanceWithSubAccounts:
-      (json['CurrentBalanceWithSubAccounts'] as num?)?.toDouble(),
+          (json['CurrentBalanceWithSubAccounts'] as num?)?.toDouble(),
       description: json['Description'] as String?,
       fullyQualifiedName: json['FullyQualifiedName'] as String?,
       lastUpdatedTime: json['LastUpdatedTime'] == null
@@ -34,7 +33,7 @@ Account _$AccountFromJson(Map<String, dynamic> json) =>
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       parentRef: json['ParentRef'] == null
           ? null
           : ReferenceType.fromJson(json['ParentRef'] as Map<String, dynamic>),
@@ -123,7 +122,7 @@ Map<String, dynamic> _$ReferenceTypeToJson(ReferenceType instance) {
 }
 
 ModificationMetaData _$ModificationMetaDataFromJson(
-    Map<String, dynamic> json) =>
+        Map<String, dynamic> json) =>
     ModificationMetaData(
       subAccount: json['SubAccount'] as bool?,
       classification: json['Classification'] as String?,
@@ -146,18 +145,15 @@ Map<String, dynamic> _$ModificationMetaDataToJson(
   return val;
 }
 
-DateTime _$DateTimeFromJson(Map<String, dynamic> json) =>
-    DateTime(
+DateTime _$DateTimeFromJson(Map<String, dynamic> json) => DateTime(
       dateTime: json['dateTime'] as String,
     );
 
-Map<String, dynamic> _$DateTimeToJson(DateTime instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$DateTimeToJson(DateTime instance) => <String, dynamic>{
       'dateTime': instance.dateTime,
     };
 
-Bill _$BillFromJson(Map<String, dynamic> json) =>
-    Bill(
+Bill _$BillFromJson(Map<String, dynamic> json) => Bill(
       txnDate: json['TxnDate'] as String?,
       linkedTxn: (json['LinkedTxn'] as List<dynamic>?)
           ?.map((e) => LinkedTxn.fromJson(e as Map<String, dynamic>))
@@ -165,22 +161,22 @@ Bill _$BillFromJson(Map<String, dynamic> json) =>
       aPAccountRef: json['APAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['APAccountRef'] as Map<String, dynamic>),
+              json['APAccountRef'] as Map<String, dynamic>),
       currencyRef: json['CurrencyRef'] == null
           ? null
           : CurrencyRefType.fromJson(
-          json['CurrencyRef'] as Map<String, dynamic>),
+              json['CurrencyRef'] as Map<String, dynamic>),
       syncToken: json['SyncToken'] as String?,
       id: json['Id'] as String?,
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       balance: (json['Balance'] as num?)?.toDouble(),
       departmentRef: json['DepartmentRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['DepartmentRef'] as Map<String, dynamic>),
+              json['DepartmentRef'] as Map<String, dynamic>),
       docNumber: json['DocNumber'] as String?,
       dueDate: json['DueDate'] as String?,
       exchangeRate: (json['ExchangeRate'] as num?)?.toDouble(),
@@ -195,11 +191,11 @@ Bill _$BillFromJson(Map<String, dynamic> json) =>
       recurDataRef: json['RecurDataRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['RecurDataRef'] as Map<String, dynamic>),
+              json['RecurDataRef'] as Map<String, dynamic>),
       salesTermRef: json['SalesTermRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['SalesTermRef'] as Map<String, dynamic>),
+              json['SalesTermRef'] as Map<String, dynamic>),
       totalAmt: (json['TotalAmt'] as num?)?.toDouble(),
       transactionLocationType: json['TransactionLocationType'] as String?,
       txnTaxDetail: json['TxnTaxDetail'] == null
@@ -254,7 +250,7 @@ const _$GlobalTaxCalculationEnumEnumMap = {
 };
 
 ItemBasedExpenseLine _$ItemBasedExpenseLineFromJson(
-    Map<String, dynamic> json) =>
+        Map<String, dynamic> json) =>
     ItemBasedExpenseLine(
       description: json['Description'] as String?,
       amount: (json['Amount'] as num?)?.toDouble(),
@@ -263,7 +259,7 @@ ItemBasedExpenseLine _$ItemBasedExpenseLineFromJson(
       itemBasedExpenseLineDetail: json['ItemBasedExpenseLineDetail'] == null
           ? null
           : ItemBasedExpenseLineDetail.fromJson(
-          json['ItemBasedExpenseLineDetail'] as Map<String, dynamic>),
+              json['ItemBasedExpenseLineDetail'] as Map<String, dynamic>),
       lineNum: (json['LineNum'] as num?)?.toDouble(),
     );
 
@@ -288,7 +284,7 @@ Map<String, dynamic> _$ItemBasedExpenseLineToJson(
 }
 
 ItemBasedExpenseLineDetail _$ItemBasedExpenseLineDetailFromJson(
-    Map<String, dynamic> json) =>
+        Map<String, dynamic> json) =>
     ItemBasedExpenseLineDetail(
       taxCodeRef: json['TaxCodeRef'] == null
           ? null
@@ -310,7 +306,7 @@ ItemBasedExpenseLineDetail _$ItemBasedExpenseLineDetailFromJson(
       priceLevelRef: json['PriceLevelRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['PriceLevelRef'] as Map<String, dynamic>),
+              json['PriceLevelRef'] as Map<String, dynamic>),
       qty: (json['Qty'] as num?)?.toDouble(),
       taxInclusiveAmt: (json['TaxInclusiveAmt'] as num?)?.toDouble(),
       unitPrice: (json['UnitPrice'] as num?)?.toDouble(),
@@ -347,17 +343,17 @@ const _$BillableStatusEnumEnumMap = {
 };
 
 AccountBasedExpenseLine _$AccountBasedExpenseLineFromJson(
-    Map<String, dynamic> json) =>
+        Map<String, dynamic> json) =>
     AccountBasedExpenseLine(
       id: json['Id'] as String?,
       detailType: json['DetailType'] as String,
       amount: (json['Amount'] as num?)?.toDouble(),
       description: json['Description'] as String?,
       accountBasedExpenseLineDetail: json['AccountBasedExpenseLineDetail'] ==
-          null
+              null
           ? null
           : AccountBasedExpense.fromJson(
-          json['AccountBasedExpenseLineDetail'] as Map<String, dynamic>),
+              json['AccountBasedExpenseLineDetail'] as Map<String, dynamic>),
       decimal: json['Decimal'] as int?,
     );
 
@@ -391,7 +387,7 @@ SalesItemLine _$SalesItemLineFromJson(Map<String, dynamic> json) =>
       salesItemLineDetail: json['SalesItemLineDetail'] == null
           ? null
           : SalesItemLineDetail.fromJson(
-          json['SalesItemLineDetail'] as Map<String, dynamic>),
+              json['SalesItemLineDetail'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SalesItemLineToJson(SalesItemLine instance) {
@@ -434,12 +430,12 @@ SalesItemLineDetail _$SalesItemLineDetailFromJson(Map<String, dynamic> json) =>
       itemAccountRef: json['ItemAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['ItemAccountRef'] as Map<String, dynamic>),
+              json['ItemAccountRef'] as Map<String, dynamic>),
       serviceDate: json['ServiceDate'] as String?,
       taxClassificationRef: json['TaxClassificationRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['TaxClassificationRef'] as Map<String, dynamic>),
+              json['TaxClassificationRef'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SalesItemLineDetailToJson(SalesItemLineDetail instance) {
@@ -466,8 +462,7 @@ Map<String, dynamic> _$SalesItemLineDetailToJson(SalesItemLineDetail instance) {
   return val;
 }
 
-GroupLine _$GroupLineFromJson(Map<String, dynamic> json) =>
-    GroupLine(
+GroupLine _$GroupLineFromJson(Map<String, dynamic> json) => GroupLine(
       lineNum: json['LineNum'] as int?,
       description: json['Description'] as String?,
       detailType: json['DetailType'] as String,
@@ -475,7 +470,7 @@ GroupLine _$GroupLineFromJson(Map<String, dynamic> json) =>
       groupLineDetail: json['GroupLineDetail'] == null
           ? null
           : GroupLineDetail.fromJson(
-          json['GroupLineDetail'] as Map<String, dynamic>),
+              json['GroupLineDetail'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$GroupLineToJson(GroupLine instance) {
@@ -503,7 +498,7 @@ GroupLineDetail _$GroupLineDetailFromJson(Map<String, dynamic> json) =>
       groupItemRef: json['GroupItemRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['GroupItemRef'] as Map<String, dynamic>),
+              json['GroupItemRef'] as Map<String, dynamic>),
       quantity: (json['Quantity'] as num?)?.toDouble(),
     );
 
@@ -532,7 +527,7 @@ DescriptionOnlyLine _$DescriptionOnlyLineFromJson(Map<String, dynamic> json) =>
       descriptionLineDetail: json['DescriptionLineDetail'] == null
           ? null
           : DescriptionLineDetail.fromJson(
-          json['DescriptionLineDetail'] as Map<String, dynamic>),
+              json['DescriptionLineDetail'] as Map<String, dynamic>),
       id: json['Id'] as String?,
     );
 
@@ -555,7 +550,7 @@ Map<String, dynamic> _$DescriptionOnlyLineToJson(DescriptionOnlyLine instance) {
 }
 
 DescriptionLineDetail _$DescriptionLineDetailFromJson(
-    Map<String, dynamic> json) =>
+        Map<String, dynamic> json) =>
     DescriptionLineDetail(
       serviceDate: json['ServiceDate'] as String?,
       taxCodeRef: json['TaxCodeRef'] == null
@@ -578,8 +573,7 @@ Map<String, dynamic> _$DescriptionLineDetailToJson(
   return val;
 }
 
-DiscountLine _$DiscountLineFromJson(Map<String, dynamic> json) =>
-    DiscountLine(
+DiscountLine _$DiscountLineFromJson(Map<String, dynamic> json) => DiscountLine(
       amount: (json['Amount'] as num?)?.toDouble(),
       lineNum: json['LineNum'] as int?,
       description: json['Description'] as String?,
@@ -588,7 +582,7 @@ DiscountLine _$DiscountLineFromJson(Map<String, dynamic> json) =>
       discountLineDetail: json['DiscountLineDetail'] == null
           ? null
           : DiscountLineDetail.fromJson(
-          json['DiscountLineDetail'] as Map<String, dynamic>),
+              json['DiscountLineDetail'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$DiscountLineToJson(DiscountLine instance) {
@@ -621,7 +615,7 @@ DiscountLineDetail _$DiscountLineDetailFromJson(Map<String, dynamic> json) =>
       discountAccountRef: json['DiscountAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['DiscountAccountRef'] as Map<String, dynamic>),
+              json['DiscountAccountRef'] as Map<String, dynamic>),
       discountPercent: (json['DiscountPercent'] as num?)?.toDouble(),
     );
 
@@ -642,8 +636,7 @@ Map<String, dynamic> _$DiscountLineDetailToJson(DiscountLineDetail instance) {
   return val;
 }
 
-SubTotalLine _$SubTotalLineFromJson(Map<String, dynamic> json) =>
-    SubTotalLine(
+SubTotalLine _$SubTotalLineFromJson(Map<String, dynamic> json) => SubTotalLine(
       id: json['Id'] as String?,
       description: json['Description'] as String?,
       lineNum: json['LineNum'] as int?,
@@ -706,7 +699,7 @@ AccountBasedExpense _$AccountBasedExpenseFromJson(Map<String, dynamic> json) =>
           ? null
           : ReferenceType.fromJson(json['TaxCodeRef'] as Map<String, dynamic>),
       accountRef:
-      ReferenceType.fromJson(json['AccountRef'] as Map<String, dynamic>),
+          ReferenceType.fromJson(json['AccountRef'] as Map<String, dynamic>),
       taxAmount: (json['TaxAmount'] as num?)?.toDouble(),
     );
 
@@ -732,16 +725,15 @@ Map<String, dynamic> _$AccountBasedExpenseToJson(AccountBasedExpense instance) {
   return val;
 }
 
-MarkupInfo _$MarkupInfoFromJson(Map<String, dynamic> json) =>
-    MarkupInfo(
+MarkupInfo _$MarkupInfoFromJson(Map<String, dynamic> json) => MarkupInfo(
       priceLevelRef: json['PriceLevelRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['PriceLevelRef'] as Map<String, dynamic>),
+              json['PriceLevelRef'] as Map<String, dynamic>),
       markUpIncomeAccountRef: json['MarkUpIncomeAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['MarkUpIncomeAccountRef'] as Map<String, dynamic>),
+              json['MarkUpIncomeAccountRef'] as Map<String, dynamic>),
       percent: (json['Percent'] as num?)?.toDouble(),
     );
 
@@ -760,22 +752,19 @@ Map<String, dynamic> _$MarkupInfoToJson(MarkupInfo instance) {
   return val;
 }
 
-LinkedTxn _$LinkedTxnFromJson(Map<String, dynamic> json) =>
-    LinkedTxn(
+LinkedTxn _$LinkedTxnFromJson(Map<String, dynamic> json) => LinkedTxn(
       txnId: json['TxnId'] as String,
       txnLineId: json['TxnLineId'] as String?,
       txnType: json['TxnType'] as String,
     );
 
-Map<String, dynamic> _$LinkedTxnToJson(LinkedTxn instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$LinkedTxnToJson(LinkedTxn instance) => <String, dynamic>{
       'TxnId': instance.txnId,
       'TxnType': instance.txnType,
       'TxnLineId': instance.txnLineId,
     };
 
-TxnTaxDetail _$TxnTaxDetailFromJson(Map<String, dynamic> json) =>
-    TxnTaxDetail(
+TxnTaxDetail _$TxnTaxDetailFromJson(Map<String, dynamic> json) => TxnTaxDetail(
       line: (json['line'] as List<dynamic>?)
           ?.map((e) => TaxLine.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -783,7 +772,7 @@ TxnTaxDetail _$TxnTaxDetailFromJson(Map<String, dynamic> json) =>
       txnTaxCodeRef: json['TxnTaxCodeRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['TxnTaxCodeRef'] as Map<String, dynamic>),
+              json['TxnTaxCodeRef'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$TxnTaxDetailToJson(TxnTaxDetail instance) {
@@ -801,12 +790,11 @@ Map<String, dynamic> _$TxnTaxDetailToJson(TxnTaxDetail instance) {
   return val;
 }
 
-TaxLine _$TaxLineFromJson(Map<String, dynamic> json) =>
-    TaxLine(
+TaxLine _$TaxLineFromJson(Map<String, dynamic> json) => TaxLine(
       amount: (json['Amount'] as num?)?.toDouble(),
       detailType: json['DetailType'] as String,
       taxLineDetail:
-      TaxLineDetail.fromJson(json['TaxLineDetail'] as Map<String, dynamic>),
+          TaxLineDetail.fromJson(json['TaxLineDetail'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$TaxLineToJson(TaxLine instance) {
@@ -833,7 +821,7 @@ TaxLineDetail _$TaxLineDetailFromJson(Map<String, dynamic> json) =>
       taxInclusiveAmount: (json['TaxInclusiveAmount'] as num?)?.toDouble(),
       taxPercent: (json['TaxPercent'] as num?)?.toDouble(),
       taxRateRef:
-      ReferenceType.fromJson(json['TaxRateRef'] as Map<String, dynamic>),
+          ReferenceType.fromJson(json['TaxRateRef'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$TaxLineDetailToJson(TaxLineDetail instance) {
@@ -855,21 +843,20 @@ Map<String, dynamic> _$TaxLineDetailToJson(TaxLineDetail instance) {
   return val;
 }
 
-CompanyInfo _$CompanyInfoFromJson(Map<String, dynamic> json) =>
-    CompanyInfo(
+CompanyInfo _$CompanyInfoFromJson(Map<String, dynamic> json) => CompanyInfo(
       id: json['Id'] as String?,
       syncToken: json['SyncToken'] as String?,
       companyAddr: json['CompanyAddr'] == null
           ? null
           : PhysicalAddress.fromJson(
-          json['CompanyAddr'] as Map<String, dynamic>),
+              json['CompanyAddr'] as Map<String, dynamic>),
       companyName: json['CompanyName'] as String?,
       companyStartDate: json['CompanyStartDate'] as String?,
       country: json['Country'] as String?,
       customerCommunicationAddr: json['CustomerCommunicationAddr'] == null
           ? null
           : PhysicalAddress.fromJson(
-          json['CustomerCommunicationAddr'] as Map<String, dynamic>),
+              json['CustomerCommunicationAddr'] as Map<String, dynamic>),
       email: json['Email'] == null
           ? null
           : EmailAddress.fromJson(json['Email'] as Map<String, dynamic>),
@@ -881,14 +868,14 @@ CompanyInfo _$CompanyInfoFromJson(Map<String, dynamic> json) =>
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       pairs: (json['pairs'] as List<dynamic>?)
           ?.map((e) => NameValue.fromJson(e as Map<String, dynamic>))
           .toList(),
       primaryPhone: json['PrimaryPhone'] == null
           ? null
           : TelephoneNumber.fromJson(
-          json['PrimaryPhone'] as Map<String, dynamic>),
+              json['PrimaryPhone'] as Map<String, dynamic>),
       supportedLanguages: json['SupportedLanguages'] as String?,
       webAddr: json['WebAddr'] == null
           ? null
@@ -963,8 +950,7 @@ Map<String, dynamic> _$PhysicalAddressToJson(PhysicalAddress instance) {
   return val;
 }
 
-EmailAddress _$EmailAddressFromJson(Map<String, dynamic> json) =>
-    EmailAddress(
+EmailAddress _$EmailAddressFromJson(Map<String, dynamic> json) => EmailAddress(
       address: json['Address'] as String?,
     );
 
@@ -999,8 +985,7 @@ Map<String, dynamic> _$WebSiteAddressToJson(WebSiteAddress instance) {
   return val;
 }
 
-NameValue _$NameValueFromJson(Map<String, dynamic> json) =>
-    NameValue(
+NameValue _$NameValueFromJson(Map<String, dynamic> json) => NameValue(
       name: json['Name'] as String?,
       value: json['Value'] as String?,
     );
@@ -1037,8 +1022,7 @@ Map<String, dynamic> _$TelephoneNumberToJson(TelephoneNumber instance) {
   return val;
 }
 
-Customer _$CustomerFromJson(Map<String, dynamic> json) =>
-    Customer(
+Customer _$CustomerFromJson(Map<String, dynamic> json) => Customer(
       id: json['Id'] as String?,
       webAddr: json['WebAddr'] == null
           ? null
@@ -1046,22 +1030,22 @@ Customer _$CustomerFromJson(Map<String, dynamic> json) =>
       primaryPhone: json['PrimaryPhone'] == null
           ? null
           : TelephoneNumber.fromJson(
-          json['PrimaryPhone'] as Map<String, dynamic>),
+              json['PrimaryPhone'] as Map<String, dynamic>),
       companyName: json['CompanyName'] as String?,
       syncToken: json['SyncToken'] as String?,
       salesTermRef: json['SalesTermRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['SalesTermRef'] as Map<String, dynamic>),
+              json['SalesTermRef'] as Map<String, dynamic>),
       balance: (json['Balance'] as num?)?.toDouble(),
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       currencyRef: json['CurrencyRef'] == null
           ? null
           : CurrencyRefType.fromJson(
-          json['CurrencyRef'] as Map<String, dynamic>),
+              json['CurrencyRef'] as Map<String, dynamic>),
       fullyQualifiedName: json['FullyQualifiedName'] as String?,
       parentRef: json['ParentRef'] == null
           ? null
@@ -1070,11 +1054,11 @@ Customer _$CustomerFromJson(Map<String, dynamic> json) =>
       alternatePhone: json['AlternatePhone'] == null
           ? null
           : TelephoneNumber.fromJson(
-          json['AlternatePhone'] as Map<String, dynamic>),
+              json['AlternatePhone'] as Map<String, dynamic>),
       aRAccountRef: json['ARAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['ARAccountRef'] as Map<String, dynamic>),
+              json['ARAccountRef'] as Map<String, dynamic>),
       balanceWithJobs: (json['BalanceWithJobs'] as num?)?.toDouble(),
       billAddr: json['BillAddr'] == null
           ? null
@@ -1085,7 +1069,7 @@ Customer _$CustomerFromJson(Map<String, dynamic> json) =>
       defaultTaxCodeRef: json['DefaultTaxCodeRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['DefaultTaxCodeRef'] as Map<String, dynamic>),
+              json['DefaultTaxCodeRef'] as Map<String, dynamic>),
       displayName: json['DisplayName'] as String?,
       familyName: json['FamilyName'] as String?,
       fax: json['Fax'] == null
@@ -1106,12 +1090,12 @@ Customer _$CustomerFromJson(Map<String, dynamic> json) =>
       paymentMethodRef: json['PaymentMethodRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['PaymentMethodRef'] as Map<String, dynamic>),
+              json['PaymentMethodRef'] as Map<String, dynamic>),
       preferredDeliveryMethod: json['PreferredDeliveryMethod'] as String?,
       primaryEmailAddr: json['PrimaryEmailAddr'] == null
           ? null
           : EmailAddress.fromJson(
-          json['PrimaryEmailAddr'] as Map<String, dynamic>),
+              json['PrimaryEmailAddr'] as Map<String, dynamic>),
       primaryTaxIdentifier: json['PrimaryTaxIdentifier'] as String?,
       printOnCheckName: json['PrintOnCheckName'] as String?,
       resaleNum: json['ResaleNum'] as String?,
@@ -1184,15 +1168,14 @@ Map<String, dynamic> _$CustomerToJson(Customer instance) {
   return val;
 }
 
-Employee _$EmployeeFromJson(Map<String, dynamic> json) =>
-    Employee(
+Employee _$EmployeeFromJson(Map<String, dynamic> json) => Employee(
       title: json['Title'] as String?,
       suffix: json['Suffix'] as String?,
       printOnCheckName: json['PrintOnCheckName'] as String?,
       primaryEmailAddr: json['PrimaryEmailAddr'] == null
           ? null
           : EmailAddress.fromJson(
-          json['PrimaryEmailAddr'] as Map<String, dynamic>),
+              json['PrimaryEmailAddr'] as Map<String, dynamic>),
       mobile: json['Mobile'] == null
           ? null
           : TelephoneNumber.fromJson(json['Mobile'] as Map<String, dynamic>),
@@ -1204,12 +1187,12 @@ Employee _$EmployeeFromJson(Map<String, dynamic> json) =>
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       syncToken: json['SyncToken'] as String?,
       primaryPhone: json['PrimaryPhone'] == null
           ? null
           : TelephoneNumber.fromJson(
-          json['PrimaryPhone'] as Map<String, dynamic>),
+              json['PrimaryPhone'] as Map<String, dynamic>),
       id: json['Id'] as String?,
       billableTime: json['BillableTime'] as bool?,
       billRate: (json['BillRate'] as num?)?.toDouble(),
@@ -1222,7 +1205,7 @@ Employee _$EmployeeFromJson(Map<String, dynamic> json) =>
       primaryAddr: json['PrimaryAddr'] == null
           ? null
           : PhysicalAddress.fromJson(
-          json['PrimaryAddr'] as Map<String, dynamic>),
+              json['PrimaryAddr'] as Map<String, dynamic>),
       releasedDate: json['ReleasedDate'] as String?,
       ssn: json['SSN'] as String?,
       v4IDPseudonym: json['V4IDPseudonym'] as String?,
@@ -1266,14 +1249,13 @@ Map<String, dynamic> _$EmployeeToJson(Employee instance) {
   return val;
 }
 
-Estimate _$EstimateFromJson(Map<String, dynamic> json) =>
-    Estimate(
+Estimate _$EstimateFromJson(Map<String, dynamic> json) => Estimate(
       id: json['Id'] as String?,
       syncToken: json['SyncToken'] as String?,
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       shipAddr: json['ShipAddr'] == null
           ? null
           : PhysicalAddress.fromJson(json['ShipAddr'] as Map<String, dynamic>),
@@ -1283,11 +1265,11 @@ Estimate _$EstimateFromJson(Map<String, dynamic> json) =>
       currencyRef: json['CurrencyRef'] == null
           ? null
           : CurrencyRefType.fromJson(
-          json['CurrencyRef'] as Map<String, dynamic>),
+              json['CurrencyRef'] as Map<String, dynamic>),
       salesTermRef: json['SalesTermRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['SalesTermRef'] as Map<String, dynamic>),
+              json['SalesTermRef'] as Map<String, dynamic>),
       line: (json['Line'] as List<dynamic>?)
           ?.map(const _LineConverter().fromJson)
           .toList(),
@@ -1313,7 +1295,7 @@ Estimate _$EstimateFromJson(Map<String, dynamic> json) =>
       departmentRef: json['DepartmentRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['DepartmentRef'] as Map<String, dynamic>),
+              json['DepartmentRef'] as Map<String, dynamic>),
       linkedTxn: (json['LinkedTxn'] as List<dynamic>?)
           ?.map((e) => LinkedTxn.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -1342,22 +1324,22 @@ Estimate _$EstimateFromJson(Map<String, dynamic> json) =>
       recurDataRef: json['RecurDataRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['RecurDataRef'] as Map<String, dynamic>),
+              json['RecurDataRef'] as Map<String, dynamic>),
       shipDate: json['ShipDate'] == null
           ? null
           : Date.fromJson(json['ShipDate'] as Map<String, dynamic>),
       shipFromAddr: json['ShipFromAddr'] == null
           ? null
           : PhysicalAddress.fromJson(
-          json['ShipFromAddr'] as Map<String, dynamic>),
+              json['ShipFromAddr'] as Map<String, dynamic>),
       shipMethodRef: json['ShipMethodRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['ShipMethodRef'] as Map<String, dynamic>),
+              json['ShipMethodRef'] as Map<String, dynamic>),
       taxExemptionRef: json['TaxExemptionRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['TaxExemptionRef'] as Map<String, dynamic>),
+              json['TaxExemptionRef'] as Map<String, dynamic>),
       txnStatus: json['TxnStatus'] as String?,
     );
 
@@ -1413,8 +1395,7 @@ Map<String, dynamic> _$EstimateToJson(Estimate instance) {
   return val;
 }
 
-CustomField _$CustomFieldFromJson(Map<String, dynamic> json) =>
-    CustomField(
+CustomField _$CustomFieldFromJson(Map<String, dynamic> json) => CustomField(
       name: json['Name'] as String?,
       definitionId: json['DefinitionId'] as String?,
       stringValue: json['StringValue'] as String?,
@@ -1443,8 +1424,7 @@ const _$CustomFieldTypeEnumEnumMap = {
   CustomFieldTypeEnum.StringType: 'StringType',
 };
 
-MemoRef _$MemoRefFromJson(Map<String, dynamic> json) =>
-    MemoRef(
+MemoRef _$MemoRefFromJson(Map<String, dynamic> json) => MemoRef(
       value: json['value'] as String?,
     );
 
@@ -1461,8 +1441,7 @@ Map<String, dynamic> _$MemoRefToJson(MemoRef instance) {
   return val;
 }
 
-Invoice _$InvoiceFromJson(Map<String, dynamic> json) =>
-    Invoice(
+Invoice _$InvoiceFromJson(Map<String, dynamic> json) => Invoice(
       id: json['Id'] as String?,
       classRef: json['ClassRef'] == null
           ? null
@@ -1470,16 +1449,16 @@ Invoice _$InvoiceFromJson(Map<String, dynamic> json) =>
       shipMethodRef: json['ShipMethodRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['ShipMethodRef'] as Map<String, dynamic>),
+              json['ShipMethodRef'] as Map<String, dynamic>),
       shipFromAddr: json['ShipFromAddr'] == null
           ? null
           : PhysicalAddress.fromJson(
-          json['ShipFromAddr'] as Map<String, dynamic>),
+              json['ShipFromAddr'] as Map<String, dynamic>),
       shipDate: json['ShipDate'] as String?,
       recurDataRef: json['RecurDataRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['RecurDataRef'] as Map<String, dynamic>),
+              json['RecurDataRef'] as Map<String, dynamic>),
       printStatus: json['PrintStatus'] as String?,
       homeTotalAmt: (json['HomeTotalAmt'] as num?)?.toDouble(),
       freeFormAddress: json['FreeFormAddress'] as bool?,
@@ -1501,7 +1480,7 @@ Invoice _$InvoiceFromJson(Map<String, dynamic> json) =>
       departmentRef: json['DepartmentRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['DepartmentRef'] as Map<String, dynamic>),
+              json['DepartmentRef'] as Map<String, dynamic>),
       docNumber: json['DocNumber'] as String?,
       dueDate: json['DueDate'] as String?,
       exchangeRate: (json['ExchangeRate'] as num?)?.toDouble(),
@@ -1522,25 +1501,25 @@ Invoice _$InvoiceFromJson(Map<String, dynamic> json) =>
       salesTermRef: json['SalesTermRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['SalesTermRef'] as Map<String, dynamic>),
+              json['SalesTermRef'] as Map<String, dynamic>),
       currencyRef: json['CurrencyRef'] == null
           ? null
           : CurrencyRefType.fromJson(
-          json['CurrencyRef'] as Map<String, dynamic>),
+              json['CurrencyRef'] as Map<String, dynamic>),
       shipAddr: json['ShipAddr'] == null
           ? null
           : PhysicalAddress.fromJson(json['ShipAddr'] as Map<String, dynamic>),
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       syncToken: json['SyncToken'] as String?,
       balance: (json['Balance'] as num?)?.toDouble(),
       homeBalance: (json['HomeBalance'] as num?)?.toDouble(),
       allowIPNPayment: json['AllowIPNPayment'] as bool?,
       allowOnlineACHPayment: json['AllowOnlineACHPayment'] as bool?,
       allowOnlineCreditCardPayment:
-      json['AllowOnlineCreditCardPayment'] as bool?,
+          json['AllowOnlineCreditCardPayment'] as bool?,
       allowOnlinePayment: json['AllowOnlinePayment'] as bool?,
       billAddr: json['BillAddr'] == null
           ? null
@@ -1558,12 +1537,12 @@ Invoice _$InvoiceFromJson(Map<String, dynamic> json) =>
       depositToAccountRef: json['DepositToAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['DepositToAccountRef'] as Map<String, dynamic>),
+              json['DepositToAccountRef'] as Map<String, dynamic>),
       invoiceLink: json['InvoiceLink'] as String?,
       taxExemptionRef: json['TaxExemptionRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['TaxExemptionRef'] as Map<String, dynamic>),
+              json['TaxExemptionRef'] as Map<String, dynamic>),
       trackingNum: json['TrackingNum'] as String?,
       txnSource: json['TxnSource'] as String?,
     );
@@ -1631,8 +1610,7 @@ Map<String, dynamic> _$InvoiceToJson(Invoice instance) {
   return val;
 }
 
-DeliveryInfo _$DeliveryInfoFromJson(Map<String, dynamic> json) =>
-    DeliveryInfo(
+DeliveryInfo _$DeliveryInfoFromJson(Map<String, dynamic> json) => DeliveryInfo(
       deliveryTime: json['DeliveryTime'] as String?,
       deliveryType: json['DeliveryType'] as String?,
     );
@@ -1651,13 +1629,12 @@ Map<String, dynamic> _$DeliveryInfoToJson(DeliveryInfo instance) {
   return val;
 }
 
-Item _$ItemFromJson(Map<String, dynamic> json) =>
-    Item(
+Item _$ItemFromJson(Map<String, dynamic> json) => Item(
       syncToken: json['SyncToken'] as String?,
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       classRef: json['ClassRef'] == null
           ? null
           : ReferenceType.fromJson(json['ClassRef'] as Map<String, dynamic>),
@@ -1666,7 +1643,7 @@ Item _$ItemFromJson(Map<String, dynamic> json) =>
       taxClassificationRef: json['TaxClassificationRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['TaxClassificationRef'] as Map<String, dynamic>),
+              json['TaxClassificationRef'] as Map<String, dynamic>),
       unitPrice: (json['UnitPrice'] as num?)?.toDouble(),
       type: json['Type'] as String?,
       name: json['Name'] as String?,
@@ -1682,27 +1659,27 @@ Item _$ItemFromJson(Map<String, dynamic> json) =>
       assetAccountRef: json['AssetAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['AssetAccountRef'] as Map<String, dynamic>),
+              json['AssetAccountRef'] as Map<String, dynamic>),
       expenseAccountRef: json['ExpenseAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['ExpenseAccountRef'] as Map<String, dynamic>),
+              json['ExpenseAccountRef'] as Map<String, dynamic>),
       incomeAccountRef: json['IncomeAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['IncomeAccountRef'] as Map<String, dynamic>),
+              json['IncomeAccountRef'] as Map<String, dynamic>),
       invStartDate: json['InvStartDate'] as String?,
       itemCategoryType: json['ItemCategoryType'] as String?,
       prefVendorRef: json['PrefVendorRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['PrefVendorRef'] as Map<String, dynamic>),
+              json['PrefVendorRef'] as Map<String, dynamic>),
       purchaseCost: (json['PurchaseCost'] as num?)?.toDouble(),
       purchaseDesc: json['PurchaseDesc'] as String?,
       purchaseTaxCodeRef: json['PurchaseTaxCodeRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['PurchaseTaxCodeRef'] as Map<String, dynamic>),
+              json['PurchaseTaxCodeRef'] as Map<String, dynamic>),
       purchaseTaxIncluded: json['PurchaseTaxIncluded'] as bool?,
       qtyOnHand: (json['QtyOnHand'] as num?)?.toDouble(),
       reorderPoint: (json['ReorderPoint'] as num?)?.toDouble(),
@@ -1710,7 +1687,7 @@ Item _$ItemFromJson(Map<String, dynamic> json) =>
       salesTaxCodeRef: json['SalesTaxCodeRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['SalesTaxCodeRef'] as Map<String, dynamic>),
+              json['SalesTaxCodeRef'] as Map<String, dynamic>),
       salesTaxIncluded: json['SalesTaxIncluded'] as bool?,
       serviceType: json['ServiceType'] as String?,
       sku: json['Sku'] as String?,
@@ -1769,8 +1746,7 @@ Map<String, dynamic> _$ItemToJson(Item instance) {
   return val;
 }
 
-Date _$DateFromJson(Map<String, dynamic> json) =>
-    Date(
+Date _$DateFromJson(Map<String, dynamic> json) => Date(
       date: json['date'] as String?,
     );
 
@@ -1787,19 +1763,18 @@ Map<String, dynamic> _$DateToJson(Date instance) {
   return val;
 }
 
-Payment _$PaymentFromJson(Map<String, dynamic> json) =>
-    Payment(
+Payment _$PaymentFromJson(Map<String, dynamic> json) => Payment(
       id: json['Id'] as String?,
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       syncToken: json['SyncToken'] as String?,
       txnSource: json['TxnSource'] as String?,
       depositToAccountRef: json['DepositToAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['DepositToAccountRef'] as Map<String, dynamic>),
+              json['DepositToAccountRef'] as Map<String, dynamic>),
       customerRef: json['CustomerRef'] == null
           ? null
           : ReferenceType.fromJson(json['CustomerRef'] as Map<String, dynamic>),
@@ -1811,23 +1786,23 @@ Payment _$PaymentFromJson(Map<String, dynamic> json) =>
       currencyRef: json['CurrencyRef'] == null
           ? null
           : CurrencyRefType.fromJson(
-          json['CurrencyRef'] as Map<String, dynamic>),
+              json['CurrencyRef'] as Map<String, dynamic>),
       taxExemptionRef: json['TaxExemptionRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['TaxExemptionRef'] as Map<String, dynamic>),
+              json['TaxExemptionRef'] as Map<String, dynamic>),
       paymentMethodRef: json['PaymentMethodRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['PaymentMethodRef'] as Map<String, dynamic>),
+              json['PaymentMethodRef'] as Map<String, dynamic>),
       aRAccountRef: json['ARAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['ARAccountRef'] as Map<String, dynamic>),
+              json['ARAccountRef'] as Map<String, dynamic>),
       creditCardPayment: json['CreditCardPayment'] == null
           ? null
           : CreditCardPayment.fromJson(
-          json['CreditCardPayment'] as Map<String, dynamic>),
+              json['CreditCardPayment'] as Map<String, dynamic>),
       paymentRefNum: json['PaymentRefNum'] as String?,
       unappliedAmt: (json['UnappliedAmt'] as num?)?.toDouble(),
     );
@@ -1867,11 +1842,11 @@ CreditCardPayment _$CreditCardPaymentFromJson(Map<String, dynamic> json) =>
       creditChargeInfo: json['CreditChargeInfo'] == null
           ? null
           : CreditChargeInfo.fromJson(
-          json['CreditChargeInfo'] as Map<String, dynamic>),
+              json['CreditChargeInfo'] as Map<String, dynamic>),
       creditChargeResponse: json['CreditChargeResponse'] == null
           ? null
           : CreditChargeResponse.fromJson(
-          json['CreditChargeResponse'] as Map<String, dynamic>),
+              json['CreditChargeResponse'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CreditCardPaymentToJson(CreditCardPayment instance) {
@@ -1889,7 +1864,7 @@ Map<String, dynamic> _$CreditCardPaymentToJson(CreditCardPayment instance) {
 }
 
 CreditChargeResponse _$CreditChargeResponseFromJson(
-    Map<String, dynamic> json) =>
+        Map<String, dynamic> json) =>
     CreditChargeResponse(
       authCode: json['AuthCode'] as String?,
       cCTransId: json['CCTransId'] as String?,
@@ -1897,7 +1872,7 @@ CreditChargeResponse _$CreditChargeResponseFromJson(
       txnAuthorizationTime: json['TxnAuthorizationTime'] == null
           ? null
           : DateTime.fromJson(
-          json['TxnAuthorizationTime'] as Map<String, dynamic>),
+              json['TxnAuthorizationTime'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CreditChargeResponseToJson(
@@ -1954,51 +1929,50 @@ Map<String, dynamic> _$CreditChargeInfoToJson(CreditChargeInfo instance) {
   return val;
 }
 
-Preferences _$PreferencesFromJson(Map<String, dynamic> json) =>
-    Preferences(
+Preferences _$PreferencesFromJson(Map<String, dynamic> json) => Preferences(
       syncToken: json['SyncToken'] as String?,
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       id: json['Id'] as String?,
       accountingInfoPrefs: json['AccountingInfoPrefs'] == null
           ? null
           : AccountingInfoPrefs.fromJson(
-          json['AccountingInfoPrefs'] as Map<String, dynamic>),
+              json['AccountingInfoPrefs'] as Map<String, dynamic>),
       currencyPrefs: json['CurrencyPrefs'] == null
           ? null
           : CurrencyPrefs.fromJson(
-          json['CurrencyPrefs'] as Map<String, dynamic>),
+              json['CurrencyPrefs'] as Map<String, dynamic>),
       emailMessagesPrefs: json['EmailMessagesPrefs'] == null
           ? null
           : EmailMessagesPrefs.fromJson(
-          json['EmailMessagesPrefs'] as Map<String, dynamic>),
+              json['EmailMessagesPrefs'] as Map<String, dynamic>),
       otherPrefs: json['OtherPrefs'] == null
           ? null
           : OtherPrefs.fromJson(json['OtherPrefs'] as Map<String, dynamic>),
       productAndServicesPrefs: json['ProductAndServicesPrefs'] == null
           ? null
           : ProductAndServicesPrefs.fromJson(
-          json['ProductAndServicesPrefs'] as Map<String, dynamic>),
+              json['ProductAndServicesPrefs'] as Map<String, dynamic>),
       reportPrefs: json['ReportPrefs'] == null
           ? null
           : ReportPrefs.fromJson(json['ReportPrefs'] as Map<String, dynamic>),
       salesFormsPrefs: json['SalesFormsPrefs'] == null
           ? null
           : SalesFormsPrefs.fromJson(
-          json['SalesFormsPrefs'] as Map<String, dynamic>),
+              json['SalesFormsPrefs'] as Map<String, dynamic>),
       taxPrefs: json['TaxPrefs'] == null
           ? null
           : TaxPrefs.fromJson(json['TaxPrefs'] as Map<String, dynamic>),
       timeTrackingPrefs: json['TimeTrackingPrefs'] == null
           ? null
           : TimeTrackingPrefs.fromJson(
-          json['TimeTrackingPrefs'] as Map<String, dynamic>),
+              json['TimeTrackingPrefs'] as Map<String, dynamic>),
       vendorAndPurchasesPrefs: json['VendorAndPurchasesPrefs'] == null
           ? null
           : VendorAndPurchasesPrefs.fromJson(
-          json['VendorAndPurchasesPrefs'] as Map<String, dynamic>),
+              json['VendorAndPurchasesPrefs'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PreferencesToJson(Preferences instance) {
@@ -2031,19 +2005,19 @@ EmailMessagesPrefs _$EmailMessagesPrefsFromJson(Map<String, dynamic> json) =>
       estimateMessage: json['EstimateMessage'] == null
           ? null
           : EmailMessageType.fromJson(
-          json['EstimateMessage'] as Map<String, dynamic>),
+              json['EstimateMessage'] as Map<String, dynamic>),
       invoiceMessage: json['InvoiceMessage'] == null
           ? null
           : EmailMessageType.fromJson(
-          json['InvoiceMessage'] as Map<String, dynamic>),
+              json['InvoiceMessage'] as Map<String, dynamic>),
       salesReceiptMessage: json['SalesReceiptMessage'] == null
           ? null
           : EmailMessageType.fromJson(
-          json['SalesReceiptMessage'] as Map<String, dynamic>),
+              json['SalesReceiptMessage'] as Map<String, dynamic>),
       statementMessage: json['StatementMessage'] == null
           ? null
           : EmailMessageType.fromJson(
-          json['StatementMessage'] as Map<String, dynamic>),
+              json['StatementMessage'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$EmailMessagesPrefsToJson(EmailMessagesPrefs instance) {
@@ -2083,7 +2057,7 @@ Map<String, dynamic> _$EmailMessageTypeToJson(EmailMessageType instance) {
 }
 
 ProductAndServicesPrefs _$ProductAndServicesPrefsFromJson(
-    Map<String, dynamic> json) =>
+        Map<String, dynamic> json) =>
     ProductAndServicesPrefs(
       forPurchase: json['ForPurchase'] as bool?,
       forSales: json['ForSales'] as bool?,
@@ -2108,8 +2082,7 @@ Map<String, dynamic> _$ProductAndServicesPrefsToJson(
   return val;
 }
 
-ReportPrefs _$ReportPrefsFromJson(Map<String, dynamic> json) =>
-    ReportPrefs(
+ReportPrefs _$ReportPrefsFromJson(Map<String, dynamic> json) => ReportPrefs(
       reportBasis: json['ReportBasis'] as String?,
       calcAgingReportFromTxnDate: json['CalcAgingReportFromTxnDate'] as bool?,
     );
@@ -2184,7 +2157,7 @@ SalesFormsPrefs _$SalesFormsPrefsFromJson(Map<String, dynamic> json) =>
       defaultTerms: json['DefaultTerms'] == null
           ? null
           : ReferenceType.fromJson(
-          json['DefaultTerms'] as Map<String, dynamic>),
+              json['DefaultTerms'] as Map<String, dynamic>),
       emailCopyToCompany: json['EmailCopyToCompany'] as bool?,
       eTransactionAttachPDF: json['ETransactionAttachPDF'] as bool?,
       eTransactionEnabledStatus: json['ETransactionEnabledStatus'] as String?,
@@ -2193,7 +2166,7 @@ SalesFormsPrefs _$SalesFormsPrefsFromJson(Map<String, dynamic> json) =>
       salesEmailBcc: json['SalesEmailBcc'] == null
           ? null
           : EmailAddress.fromJson(
-          json['SalesEmailBcc'] as Map<String, dynamic>),
+              json['SalesEmailBcc'] as Map<String, dynamic>),
       salesEmailCc: json['SalesEmailCc'] == null
           ? null
           : EmailAddress.fromJson(json['SalesEmailCc'] as Map<String, dynamic>),
@@ -2237,18 +2210,18 @@ Map<String, dynamic> _$SalesFormsPrefsToJson(SalesFormsPrefs instance) {
 }
 
 VendorAndPurchasesPrefs _$VendorAndPurchasesPrefsFromJson(
-    Map<String, dynamic> json) =>
+        Map<String, dynamic> json) =>
     VendorAndPurchasesPrefs(
       defaultTerms: json['DefaultTerms'] == null
           ? null
           : ReferenceType.fromJson(
-          json['DefaultTerms'] as Map<String, dynamic>),
+              json['DefaultTerms'] as Map<String, dynamic>),
       billableExpenseTracking: json['BillableExpenseTracking'] as bool?,
       defaultMarkup: (json['DefaultMarkup'] as num?)?.toDouble(),
       defaultMarkupAccount: json['DefaultMarkupAccount'] == null
           ? null
           : ReferenceType.fromJson(
-          json['DefaultMarkupAccount'] as Map<String, dynamic>),
+              json['DefaultMarkupAccount'] as Map<String, dynamic>),
       pOCustomFields: (json['POCustomField'] as List<dynamic>?)
           ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -2276,13 +2249,12 @@ Map<String, dynamic> _$VendorAndPurchasesPrefsToJson(
   return val;
 }
 
-TaxPrefs _$TaxPrefsFromJson(Map<String, dynamic> json) =>
-    TaxPrefs(
+TaxPrefs _$TaxPrefsFromJson(Map<String, dynamic> json) => TaxPrefs(
       partnerTaxEnabled: json['PartnerTaxEnabled'] as bool?,
       taxGroupCodeRef: json['TaxGroupCodeRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['TaxGroupCodeRef'] as Map<String, dynamic>),
+              json['TaxGroupCodeRef'] as Map<String, dynamic>),
       usingSalesTax: json['UsingSalesTax'] as bool?,
     );
 
@@ -2301,8 +2273,7 @@ Map<String, dynamic> _$TaxPrefsToJson(TaxPrefs instance) {
   return val;
 }
 
-OtherPrefs _$OtherPrefsFromJson(Map<String, dynamic> json) =>
-    OtherPrefs(
+OtherPrefs _$OtherPrefsFromJson(Map<String, dynamic> json) => OtherPrefs(
       nameValues: (json['NameValue'] as List<dynamic>?)
           ?.map((e) => NameValue.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -2352,7 +2323,7 @@ CurrencyPrefs _$CurrencyPrefsFromJson(Map<String, dynamic> json) =>
       homeCurrency: json['HomeCurrency'] == null
           ? null
           : ReferenceType.fromJson(
-          json['HomeCurrency'] as Map<String, dynamic>),
+              json['HomeCurrency'] as Map<String, dynamic>),
       multiCurrencyEnabled: json['MultiCurrencyEnabled'] as bool?,
     );
 
@@ -2418,8 +2389,7 @@ Map<String, dynamic> _$ProfitColumnsToJson(ProfitColumns instance) {
   return val;
 }
 
-ProfitHeader _$ProfitHeaderFromJson(Map<String, dynamic> json) =>
-    ProfitHeader(
+ProfitHeader _$ProfitHeaderFromJson(Map<String, dynamic> json) => ProfitHeader(
       className: json['Class'] as String?,
       currency: json['Currency'] as String?,
       customer: json['Customer'] as String?,
@@ -2468,7 +2438,8 @@ TransactionList _$TransactionListFromJson(Map<String, dynamic> json) =>
     TransactionList(
       columns: json['Columns'] == null
           ? null
-          : TransactionColumns.fromJson(json['Columns'] as Map<String, dynamic>),
+          : TransactionColumns.fromJson(
+              json['Columns'] as Map<String, dynamic>),
       header: json['Header'] == null
           ? null
           : TransactionHeader.fromJson(json['Header'] as Map<String, dynamic>),
@@ -2558,8 +2529,7 @@ Map<String, dynamic> _$TransactionHeaderToJson(TransactionHeader instance) {
   return val;
 }
 
-Option _$OptionFromJson(Map<String, dynamic> json) =>
-    Option(
+Option _$OptionFromJson(Map<String, dynamic> json) => Option(
       name: json['name'] as String?,
       value: json['value'] as String?,
     );
@@ -2578,8 +2548,7 @@ Map<String, dynamic> _$OptionToJson(Option instance) {
   return val;
 }
 
-ProfitRows _$ProfitRowsFromJson(Map<String, dynamic> json) =>
-    ProfitRows(
+ProfitRows _$ProfitRowsFromJson(Map<String, dynamic> json) => ProfitRows(
       rows: (json['Row'] as List<dynamic>?)
           ?.map((e) => ProfitRow.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -2598,8 +2567,7 @@ Map<String, dynamic> _$ProfitRowsToJson(ProfitRows instance) {
   return val;
 }
 
-ProfitRow _$ProfitRowFromJson(Map<String, dynamic> json) =>
-    ProfitRow(
+ProfitRow _$ProfitRowFromJson(Map<String, dynamic> json) => ProfitRow(
       rows: (json['Rows']?['Row'] as List<dynamic>?)
           ?.map((e) => ProfitRow.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -2609,8 +2577,9 @@ ProfitRow _$ProfitRowFromJson(Map<String, dynamic> json) =>
       columns: (json['Columns'] as List<dynamic>?)
           ?.map((e) => ProfitColumn.fromJson(e as Map<String, dynamic>))
           .toList(),
-      summary: json['Summary'] == null ? null : RowSummary.fromJson(
-          json['Summary'] as Map<String, dynamic>),
+      summary: json['Summary'] == null
+          ? null
+          : RowSummary.fromJson(json['Summary'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProfitRowToJson(ProfitRow instance) {
@@ -2659,8 +2628,9 @@ TransactionRow _$TransactionRowFromJson(Map<String, dynamic> json) =>
       colData: (json['ColData'] as List<dynamic>?)
           ?.map((e) => ColData.fromJson(e as Map<String, dynamic>))
           .toList(),
-      summary: json['Summary'] == null ? null : RowSummary.fromJson(
-          json['Summary'] as Map<String, dynamic>),
+      summary: json['Summary'] == null
+          ? null
+          : RowSummary.fromJson(json['Summary'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$TransactionRowToJson(TransactionRow instance) {
@@ -2679,8 +2649,7 @@ Map<String, dynamic> _$TransactionRowToJson(TransactionRow instance) {
   return val;
 }
 
-RowHeader _$RowHeaderFromJson(Map<String, dynamic> json) =>
-    RowHeader(
+RowHeader _$RowHeaderFromJson(Map<String, dynamic> json) => RowHeader(
       colData: (json['ColData'] as List<dynamic>?)
           ?.map((e) => ColData.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -2699,8 +2668,7 @@ Map<String, dynamic> _$RowHeaderToJson(RowHeader instance) {
   return val;
 }
 
-ColData _$ColDataFromJson(Map<String, dynamic> json) =>
-    ColData(
+ColData _$ColDataFromJson(Map<String, dynamic> json) => ColData(
       value: json['value'] as String?,
       id: json['id'] as String?,
       href: json['href'] as String?,
@@ -2721,8 +2689,7 @@ Map<String, dynamic> _$ColDataToJson(ColData instance) {
   return val;
 }
 
-ProfitColumn _$ProfitColumnFromJson(Map<String, dynamic> json) =>
-    ProfitColumn(
+ProfitColumn _$ProfitColumnFromJson(Map<String, dynamic> json) => ProfitColumn(
       colTitle: json['ColTitle'] as String?,
       colType: json['ColType'] as String?,
     );
@@ -2761,8 +2728,7 @@ Map<String, dynamic> _$TransactionColumnToJson(TransactionColumn instance) {
   return val;
 }
 
-RowSummary _$RowSummaryFromJson(Map<String, dynamic> json) =>
-    RowSummary(
+RowSummary _$RowSummaryFromJson(Map<String, dynamic> json) => RowSummary(
       colData: (json['ColData'] as List<dynamic>?)
           ?.map((e) => ColData.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -2781,13 +2747,12 @@ Map<String, dynamic> _$RowSummaryToJson(RowSummary instance) {
   return val;
 }
 
-TaxAgency _$TaxAgencyFromJson(Map<String, dynamic> json) =>
-    TaxAgency(
+TaxAgency _$TaxAgencyFromJson(Map<String, dynamic> json) => TaxAgency(
       id: json['Id'] as String?,
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       syncToken: json['SyncToken'] as String?,
       displayName: json['DisplayName'] as String?,
       lastFileDate: json['LastFileDate'] as String?,
@@ -2824,14 +2789,14 @@ PurchaseOrder _$PurchaseOrderFromJson(Map<String, dynamic> json) =>
       aPAccountRef: json['APAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['APAccountRef'] as Map<String, dynamic>),
+              json['APAccountRef'] as Map<String, dynamic>),
       classRef: json['ClassRef'] == null
           ? null
           : ReferenceType.fromJson(json['ClassRef'] as Map<String, dynamic>),
       currencyRef: json['CurrencyRef'] == null
           ? null
           : CurrencyRefType.fromJson(
-          json['CurrencyRef'] as Map<String, dynamic>),
+              json['CurrencyRef'] as Map<String, dynamic>),
       docNumber: json['DocNumber'] as String?,
       line: (json['Line'] as List<dynamic>?)
           ?.map(const _LineConverter().fromJson)
@@ -2845,7 +2810,7 @@ PurchaseOrder _$PurchaseOrderFromJson(Map<String, dynamic> json) =>
       salesTermRef: json['SalesTermRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['SalesTermRef'] as Map<String, dynamic>),
+              json['SalesTermRef'] as Map<String, dynamic>),
       linkedTxn: (json['LinkedTxn'] as List<dynamic>?)
           ?.map((e) => LinkedTxn.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -2858,12 +2823,12 @@ PurchaseOrder _$PurchaseOrderFromJson(Map<String, dynamic> json) =>
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       privateNote: json['PrivateNote'] as String?,
       shipMethodRef: json['ShipMethodRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['ShipMethodRef'] as Map<String, dynamic>),
+              json['ShipMethodRef'] as Map<String, dynamic>),
       txnTaxDetail: json['TxnTaxDetail'] == null
           ? null
           : TxnTaxDetail.fromJson(json['TxnTaxDetail'] as Map<String, dynamic>),
@@ -2877,13 +2842,13 @@ PurchaseOrder _$PurchaseOrderFromJson(Map<String, dynamic> json) =>
       vendorAddr: json['VendorAddr'] == null
           ? null
           : PhysicalAddress.fromJson(
-          json['VendorAddr'] as Map<String, dynamic>),
+              json['VendorAddr'] as Map<String, dynamic>),
       emailStatus: json['EmailStatus'] as String?,
       totalAmt: (json['TotalAmt'] as num?)?.toDouble(),
       recurDataRef: json['RecurDataRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['RecurDataRef'] as Map<String, dynamic>),
+              json['RecurDataRef'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PurchaseOrderToJson(PurchaseOrder instance) {
@@ -2928,14 +2893,13 @@ Map<String, dynamic> _$PurchaseOrderToJson(PurchaseOrder instance) {
   return val;
 }
 
-Vendor _$VendorFromJson(Map<String, dynamic> json) =>
-    Vendor(
+Vendor _$VendorFromJson(Map<String, dynamic> json) => Vendor(
       displayName: json['DisplayName'] as String?,
       syncToken: json['SyncToken'] as String?,
       metaData: json['MetaData'] == null
           ? null
           : ModificationMetaData.fromJson(
-          json['MetaData'] as Map<String, dynamic>),
+              json['MetaData'] as Map<String, dynamic>),
       id: json['Id'] as String?,
       source: json['Source'] as String?,
       active: json['Active'] as bool?,
@@ -2943,7 +2907,7 @@ Vendor _$VendorFromJson(Map<String, dynamic> json) =>
       currencyRef: json['CurrencyRef'] == null
           ? null
           : CurrencyRefType.fromJson(
-          json['CurrencyRef'] as Map<String, dynamic>),
+              json['CurrencyRef'] as Map<String, dynamic>),
       billAddr: json['BillAddr'] == null
           ? null
           : PhysicalAddress.fromJson(json['BillAddr'] as Map<String, dynamic>),
@@ -2952,7 +2916,7 @@ Vendor _$VendorFromJson(Map<String, dynamic> json) =>
       primaryPhone: json['PrimaryPhone'] == null
           ? null
           : TelephoneNumber.fromJson(
-          json['PrimaryPhone'] as Map<String, dynamic>),
+              json['PrimaryPhone'] as Map<String, dynamic>),
       familyName: json['FamilyName'] as String?,
       givenName: json['GivenName'] as String?,
       middleName: json['MiddleName'] as String?,
@@ -2962,7 +2926,7 @@ Vendor _$VendorFromJson(Map<String, dynamic> json) =>
       primaryEmailAddr: json['PrimaryEmailAddr'] == null
           ? null
           : EmailAddress.fromJson(
-          json['PrimaryEmailAddr'] as Map<String, dynamic>),
+              json['PrimaryEmailAddr'] as Map<String, dynamic>),
       printOnCheckName: json['PrintOnCheckName'] as String?,
       suffix: json['Suffix'] as String?,
       title: json['Title'] as String?,
@@ -2975,7 +2939,7 @@ Vendor _$VendorFromJson(Map<String, dynamic> json) =>
       alternatePhone: json['AlternatePhone'] == null
           ? null
           : TelephoneNumber.fromJson(
-          json['AlternatePhone'] as Map<String, dynamic>),
+              json['AlternatePhone'] as Map<String, dynamic>),
       companyName: json['CompanyName'] as String?,
       webAddr: json['WebAddr'] == null
           ? null
@@ -2983,13 +2947,13 @@ Vendor _$VendorFromJson(Map<String, dynamic> json) =>
       aPAccountRef: json['APAccountRef'] == null
           ? null
           : ReferenceType.fromJson(
-          json['APAccountRef'] as Map<String, dynamic>),
+              json['APAccountRef'] as Map<String, dynamic>),
       acctNum: json['AcctNum'] as String?,
       hasTPAR: json['HasTPAR'] as bool?,
       otherContactInfo: json['OtherContactInfo'] == null
           ? null
           : ContactInfo.fromJson(
-          json['OtherContactInfo'] as Map<String, dynamic>),
+              json['OtherContactInfo'] as Map<String, dynamic>),
       t4AEligible: json['T4AEligible'] as bool?,
       t5018Eligible: json['T5018Eligible'] as bool?,
       taxIdentifier: json['TaxIdentifier'] as String?,
@@ -3001,7 +2965,7 @@ Vendor _$VendorFromJson(Map<String, dynamic> json) =>
       vendorPaymentBankDetail: json['VendorPaymentBankDetail'] == null
           ? null
           : VendorPaymentBankDetail.fromJson(
-          json['VendorPaymentBankDetail'] as Map<String, dynamic>),
+              json['VendorPaymentBankDetail'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$VendorToJson(Vendor instance) {
@@ -3054,8 +3018,7 @@ Map<String, dynamic> _$VendorToJson(Vendor instance) {
   return val;
 }
 
-ContactInfo _$ContactInfoFromJson(Map<String, dynamic> json) =>
-    ContactInfo(
+ContactInfo _$ContactInfoFromJson(Map<String, dynamic> json) => ContactInfo(
       type: json['Type'] as String?,
       telephone: json['Telephone'] == null
           ? null
@@ -3077,7 +3040,7 @@ Map<String, dynamic> _$ContactInfoToJson(ContactInfo instance) {
 }
 
 VendorPaymentBankDetail _$VendorPaymentBankDetailFromJson(
-    Map<String, dynamic> json) =>
+        Map<String, dynamic> json) =>
     VendorPaymentBankDetail(
       bankAccountName: json['BankAccountName'] as String?,
       bankAccountNumber: json['BankAccountNumber'] as String?,
@@ -3102,8 +3065,7 @@ Map<String, dynamic> _$VendorPaymentBankDetailToJson(
   return val;
 }
 
-BankAccount _$BankAccountFromJson(Map<String, dynamic> json) =>
-    BankAccount(
+BankAccount _$BankAccountFromJson(Map<String, dynamic> json) => BankAccount(
       id: json['id'] as String?,
       name: json['name'] as String?,
       country: json['country'] as String?,
@@ -3154,8 +3116,7 @@ const _$BankAccountTypeEnumEnumMap = {
   BankAccountTypeEnum.BUSINESS_CHECKING: 'BUSINESS_CHECKING',
 };
 
-Card _$CardFromJson(Map<String, dynamic> json) =>
-    Card(
+Card _$CardFromJson(Map<String, dynamic> json) => Card(
       updated: json['updated'] as String?,
       entityType: json['entityType'] as String?,
       entityId: json['entityId'] as String?,
@@ -3177,7 +3138,7 @@ Card _$CardFromJson(Map<String, dynamic> json) =>
       zeroDollarVerification: json['zeroDollarVerification'] == null
           ? null
           : ZeroDollarVerification.fromJson(
-          json['zeroDollarVerification'] as Map<String, dynamic>),
+              json['zeroDollarVerification'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CardToJson(Card instance) {
@@ -3219,8 +3180,7 @@ const _$CardTypeEnumEnumMap = {
   CardTypeEnum.Visa: 'Visa',
 };
 
-Address _$AddressFromJson(Map<String, dynamic> json) =>
-    Address(
+Address _$AddressFromJson(Map<String, dynamic> json) => Address(
       country: json['country'] as String?,
       postalCode: json['postalCode'] as String?,
       city: json['city'] as String?,
@@ -3246,7 +3206,7 @@ Map<String, dynamic> _$AddressToJson(Address instance) {
 }
 
 ZeroDollarVerification _$ZeroDollarVerificationFromJson(
-    Map<String, dynamic> json) =>
+        Map<String, dynamic> json) =>
     ZeroDollarVerification(
       type: json['type'] as String?,
       status: json['status'] as String?,
@@ -3269,8 +3229,7 @@ Map<String, dynamic> _$ZeroDollarVerificationToJson(
   return val;
 }
 
-Charge _$ChargeFromJson(Map<String, dynamic> json) =>
-    Charge(
+Charge _$ChargeFromJson(Map<String, dynamic> json) => Charge(
       status: $enumDecodeNullable(_$ChargeStatusEnumEnumMap, json['status']),
       id: json['id'] as String?,
       created: json['created'] as String?,
@@ -3284,7 +3243,7 @@ Charge _$ChargeFromJson(Map<String, dynamic> json) =>
       captureDetail: json['captureDetail'] == null
           ? null
           : CaptureDetail.fromJson(
-          json['captureDetail'] as Map<String, dynamic>),
+              json['captureDetail'] as Map<String, dynamic>),
       card: json['card'] == null
           ? null
           : Card.fromJson(json['card'] as Map<String, dynamic>),
@@ -3394,8 +3353,7 @@ Map<String, dynamic> _$PaymentContextToJson(PaymentContext instance) {
   return val;
 }
 
-DeviceInfo _$DeviceInfoFromJson(Map<String, dynamic> json) =>
-    DeviceInfo(
+DeviceInfo _$DeviceInfoFromJson(Map<String, dynamic> json) => DeviceInfo(
       id: json['id'] as String?,
       type: json['type'] as String?,
       encrypted: json['encrypted'] as bool?,
@@ -3426,8 +3384,7 @@ Map<String, dynamic> _$DeviceInfoToJson(DeviceInfo instance) {
   return val;
 }
 
-Restaurant _$RestaurantFromJson(Map<String, dynamic> json) =>
-    Restaurant(
+Restaurant _$RestaurantFromJson(Map<String, dynamic> json) => Restaurant(
       taxAmount: (json['taxAmount'] as num?)?.toDouble(),
       beverageAmount: (json['beverageAmount'] as num?)?.toDouble(),
       foodAmount: (json['foodAmount'] as num?)?.toDouble(),
@@ -3452,10 +3409,9 @@ Map<String, dynamic> _$RestaurantToJson(Restaurant instance) {
   return val;
 }
 
-Lodging _$LodgingFromJson(Map<String, dynamic> json) =>
-    Lodging(
+Lodging _$LodgingFromJson(Map<String, dynamic> json) => Lodging(
       chargeType:
-      $enumDecodeNullable(_$ChargeTypeEnumEnumMap, json['chargeType']),
+          $enumDecodeNullable(_$ChargeTypeEnumEnumMap, json['chargeType']),
       checkInDate: json['checkInDate'] as String?,
       checkOutDate: json['checkOutDate'] as String?,
       extraCharges: (json['extraCharges'] as List<dynamic>?)
@@ -3511,8 +3467,7 @@ const _$SpecialProgramEnumEnumMap = {
   SpecialProgramEnum.NoShowCharge: 'NoShowCharge',
 };
 
-ECheck _$ECheckFromJson(Map<String, dynamic> json) =>
-    ECheck(
+ECheck _$ECheckFromJson(Map<String, dynamic> json) => ECheck(
       id: json['id'] as String?,
       created: json['created'] as String?,
       amount: json['amount'] as String?,
@@ -3563,35 +3518,34 @@ const _$ECheckStatusEnumMap = {
   ECheckStatus.REFUNDED: 'REFUNDED',
 };
 
-UrlDiscovery _$UrlDiscoveryFromJson(Map<String, dynamic> json) =>
-    UrlDiscovery(
+UrlDiscovery _$UrlDiscoveryFromJson(Map<String, dynamic> json) => UrlDiscovery(
       authorization_endpoint: json['authorization_endpoint'] as String,
       claims_supported: (json['claims_supported'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
       id_token_signing_alg_values_supported:
-      (json['id_token_signing_alg_values_supported'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
+          (json['id_token_signing_alg_values_supported'] as List<dynamic>)
+              .map((e) => e as String)
+              .toList(),
       issuer: json['issuer'] as String?,
       jwks_uri: json['jwks_uri'] as String,
       response_types_supported:
-      (json['response_types_supported'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
+          (json['response_types_supported'] as List<dynamic>)
+              .map((e) => e as String)
+              .toList(),
       revocation_endpoint: json['revocation_endpoint'] as String,
       scopes_supported: (json['scopes_supported'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
       subject_types_supported:
-      (json['subject_types_supported'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
+          (json['subject_types_supported'] as List<dynamic>)
+              .map((e) => e as String)
+              .toList(),
       token_endpoint: json['token_endpoint'] as String,
       token_endpoint_auth_methods_supported:
-      (json['token_endpoint_auth_methods_supported'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
+          (json['token_endpoint_auth_methods_supported'] as List<dynamic>)
+              .map((e) => e as String)
+              .toList(),
       userinfo_endpoint: json['userinfo_endpoint'] as String,
     );
 
@@ -3784,7 +3738,8 @@ Map<String, dynamic> _$ProfitAndLossQueryToJson(ProfitAndLossQuery instance) {
   return val;
 }
 
-TransactionListQuery _$TransactionListQueryFromJson(Map<String, dynamic> json) =>
+TransactionListQuery _$TransactionListQueryFromJson(
+        Map<String, dynamic> json) =>
     TransactionListQuery(
       date_macro: json['date_macro'] as String?,
       payment_method: json['payment_method'] as String?,
@@ -3820,7 +3775,8 @@ TransactionListQuery _$TransactionListQueryFromJson(Map<String, dynamic> json) =
       end_moddate: json['end_moddate'] as String?,
     );
 
-Map<String, dynamic> _$TransactionListQueryToJson(TransactionListQuery instance) {
+Map<String, dynamic> _$TransactionListQueryToJson(
+    TransactionListQuery instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -3842,5 +3798,24 @@ Map<String, dynamic> _$TransactionListQueryToJson(TransactionListQuery instance)
   writeNotNull('start_date', instance.start_date);
   writeNotNull('department', instance.department);
   writeNotNull('start_duedate', instance.start_duedate);
+  writeNotNull('columns', instance.columns);
+  writeNotNull('end_duedate', instance.end_duedate);
+  writeNotNull('vendor', instance.vendor);
+  writeNotNull('end_date', instance.end_date);
+  writeNotNull('memo', instance.memo);
+  writeNotNull('appaid', instance.appaid);
+  writeNotNull('moddate_macro', instance.moddate_macro);
+  writeNotNull('printed', instance.printed);
+  writeNotNull('createdate_macro', instance.createdate_macro);
+  writeNotNull('cleared', instance.cleared);
+  writeNotNull('customer', instance.customer);
+  writeNotNull('qzurl', instance.qzurl);
+  writeNotNull('term', instance.term);
+  writeNotNull('end_createdate', instance.end_createdate);
+  writeNotNull('name', instance.name);
+  writeNotNull('sort_by', instance.sort_by);
+  writeNotNull('sort_order', instance.sort_order);
+  writeNotNull('start_createdate', instance.start_createdate);
+  writeNotNull('end_moddate', instance.end_moddate);
   return val;
 }
