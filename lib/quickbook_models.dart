@@ -3141,15 +3141,15 @@ class ProfitRow {
   final RowHeader? header;
 
   @JsonKey(name: "Rows")
-  final List<ProfitRow>? rows;
+  final ProfitRows? rows;
 
-  @JsonKey(name: "Columns")
-  final List<ProfitColumn>? columns;
+  @JsonKey(name: "ColData")
+  final List<ColData>? colData;
 
   @JsonKey(name: "Summary")
   final RowSummary? summary;
 
-  ProfitRow({this.rows, this.header, this.columns, this.summary});
+  ProfitRow({this.rows, this.header, this.colData, this.summary});
 
   factory ProfitRow.fromJson(Map<String, dynamic> json) =>
       _$ProfitRowFromJson(json);
@@ -3227,10 +3227,14 @@ class RowHeader {
 
 @JsonSerializable(includeIfNull: false)
 class ColData {
+
+  @JsonKey(name: "id")
   final String? id;
 
+  @JsonKey(name: "value")
   final String? value;
 
+  @JsonKey(name: "href")
   final String? href;
 
   ColData({this.value, this.id, this.href});
