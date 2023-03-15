@@ -3971,3 +3971,45 @@ Map<String, dynamic> _$TransactionListQueryToJson(
   writeNotNull('end_moddate', instance.end_moddate);
   return val;
 }
+
+BalanceSheetQuery _$BalanceSheetQueryFromJson(Map<String, dynamic> json) =>
+    BalanceSheetQuery(
+      customer: json['customer'] as String?,
+      vendor: json['vendor'] as String?,
+      item: json['item'] as String?,
+      department: json['department'] as String?,
+      accounting_method: json['accounting_method'] as String?,
+      adjusted_gain_loss: json['adjusted_gain_loss'] as String?,
+      date_macro: json['date_macro'] as String?,
+      end_date: json['end_date'] as String?,
+      qzurl: json['qzurl'] as String?,
+      reportClass: json['class'] as String?,
+      sort_order: json['sort_order'] as String?,
+      start_date: json['start_date'] as String?,
+      summarize_column_by: json['summarize_column_by'] as String?,
+    );
+
+Map<String, dynamic> _$BalanceSheetQueryToJson(BalanceSheetQuery instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('customer', instance.customer);
+  writeNotNull('qzurl', instance.qzurl);
+  writeNotNull('accounting_method', instance.accounting_method);
+  writeNotNull('end_date', instance.end_date);
+  writeNotNull('date_macro', instance.date_macro);
+  writeNotNull('adjusted_gain_loss', instance.adjusted_gain_loss);
+  writeNotNull('class', instance.reportClass);
+  writeNotNull('item', instance.item);
+  writeNotNull('sort_order', instance.sort_order);
+  writeNotNull('summarize_column_by', instance.summarize_column_by);
+  writeNotNull('department', instance.department);
+  writeNotNull('vendor', instance.vendor);
+  writeNotNull('start_date', instance.start_date);
+  return val;
+}

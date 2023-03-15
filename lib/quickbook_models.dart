@@ -4609,6 +4609,61 @@ class TransactionListQuery {
   }
 }
 
+@JsonSerializable(includeIfNull: false)
+class BalanceSheetQuery {
+  final String? customer;
+
+  final String? qzurl;
+
+  final String? accounting_method;
+
+  final String? end_date;
+
+  final String? date_macro;
+
+  final String? adjusted_gain_loss;
+
+  @JsonKey(name: "class")
+  final String? reportClass;
+
+  final String? item;
+
+  final String? sort_order;
+
+  final String? summarize_column_by;
+
+  final String? department;
+
+  final String? vendor;
+
+  final String? start_date;
+
+  BalanceSheetQuery(
+      {this.customer,
+        this.vendor,
+        this.item,
+        this.department,
+        this.accounting_method,
+        this.adjusted_gain_loss,
+        this.date_macro,
+        this.end_date,
+        this.qzurl,
+        this.reportClass,
+        this.sort_order,
+        this.start_date,
+        this.summarize_column_by});
+
+  factory BalanceSheetQuery.fromJson(Map<String, dynamic> json) =>
+      _$BalanceSheetQueryFromJson(json);
+
+  Map<String, dynamic> toJson() => _$BalanceSheetQueryToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
+  }
+}
+
 ///
 /// The information below provides a reference on how to access
 /// the Transaction List report from the QuickBooks Online
