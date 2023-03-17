@@ -2612,8 +2612,7 @@ Map<String, dynamic> _$ReportRowToJson(ReportRow instance) {
   return val;
 }
 
-Report _$ReportFromJson(Map<String, dynamic> json) =>
-    Report(
+Report _$ReportFromJson(Map<String, dynamic> json) => Report(
       header: json['Header'] == null
           ? null
           : ReportHeader.fromJson(json['Header'] as Map<String, dynamic>),
@@ -2662,9 +2661,9 @@ Map<String, dynamic> _$ReportColumnsToJson(ReportColumns instance) {
 }
 
 ReportColumn _$ReportColumnFromJson(Map<String, dynamic> json) => ReportColumn(
-  colTitle: json['ColTitle'] as String?,
-  colType: json['ColType'] as String?,
-);
+      colTitle: json['ColTitle'] as String?,
+      colType: json['ColType'] as String?,
+    );
 
 Map<String, dynamic> _$ReportColumnToJson(ReportColumn instance) {
   final val = <String, dynamic>{};
@@ -4010,6 +4009,42 @@ Map<String, dynamic> _$BalanceSheetQueryToJson(BalanceSheetQuery instance) {
   writeNotNull('summarize_column_by', instance.summarize_column_by);
   writeNotNull('department', instance.department);
   writeNotNull('vendor', instance.vendor);
+  writeNotNull('start_date', instance.start_date);
+  return val;
+}
+
+VendorExpensesQuery _$VendorExpensesQueryFromJson(Map<String, dynamic> json) =>
+    VendorExpensesQuery(
+      customer: json['customer'] as String?,
+      vendor: json['vendor'] as String?,
+      end_date: json['end_date'] as String?,
+      date_macro: json['date_macro'] as String?,
+      reportClass: json['class'] as String?,
+      sort_order: json['sort_order'] as String?,
+      summarize_column_by: json['summarize_column_by'] as String?,
+      department: json['department'] as String?,
+      accounting_method: json['accounting_method'] as String?,
+      start_date: json['start_date'] as String?,
+    );
+
+Map<String, dynamic> _$VendorExpensesQueryToJson(VendorExpensesQuery instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('customer', instance.customer);
+  writeNotNull('vendor', instance.vendor);
+  writeNotNull('end_date', instance.end_date);
+  writeNotNull('date_macro', instance.date_macro);
+  writeNotNull('class', instance.reportClass);
+  writeNotNull('sort_order', instance.sort_order);
+  writeNotNull('summarize_column_by', instance.summarize_column_by);
+  writeNotNull('department', instance.department);
+  writeNotNull('accounting_method', instance.accounting_method);
   writeNotNull('start_date', instance.start_date);
   return val;
 }

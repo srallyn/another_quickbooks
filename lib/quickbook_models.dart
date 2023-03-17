@@ -4640,23 +4640,69 @@ class BalanceSheetQuery {
 
   BalanceSheetQuery(
       {this.customer,
-        this.vendor,
-        this.item,
-        this.department,
-        this.accounting_method,
-        this.adjusted_gain_loss,
-        this.date_macro,
-        this.end_date,
-        this.qzurl,
-        this.reportClass,
-        this.sort_order,
-        this.start_date,
-        this.summarize_column_by});
+      this.vendor,
+      this.item,
+      this.department,
+      this.accounting_method,
+      this.adjusted_gain_loss,
+      this.date_macro,
+      this.end_date,
+      this.qzurl,
+      this.reportClass,
+      this.sort_order,
+      this.start_date,
+      this.summarize_column_by});
 
   factory BalanceSheetQuery.fromJson(Map<String, dynamic> json) =>
       _$BalanceSheetQueryFromJson(json);
 
   Map<String, dynamic> toJson() => _$BalanceSheetQueryToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
+  }
+}
+
+@JsonSerializable(includeIfNull: false)
+class VendorExpensesQuery {
+  final String? customer;
+
+  final String? vendor;
+
+  final String? end_date;
+
+  final String? date_macro;
+
+  @JsonKey(name: "class")
+  final String? reportClass;
+
+  final String? sort_order;
+
+  final String? summarize_column_by;
+
+  final String? department;
+
+  final String? accounting_method;
+
+  final String? start_date;
+
+  VendorExpensesQuery(
+      {this.customer,
+      this.vendor,
+      this.end_date,
+      this.date_macro,
+      this.reportClass,
+      this.sort_order,
+      this.summarize_column_by,
+      this.department,
+      this.accounting_method,
+      this.start_date});
+
+  factory VendorExpensesQuery.fromJson(Map<String, dynamic> json) =>
+      _$VendorExpensesQueryFromJson(json);
+
+  Map<String, dynamic> toJson() => _$VendorExpensesQueryToJson(this);
 
   @override
   String toString() {
