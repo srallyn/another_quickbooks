@@ -6,6 +6,6 @@ class VendorExpensesException implements Exception {
 
   @override
   String toString() {
-    return "BalanceSheetException: $statusCode - $message";
+    return "VendorExpensesException: $statusCode - $message";
   }
 }
